@@ -350,20 +350,6 @@ function remove_menus () {
 add_action('admin_menu', 'remove_menus');
 //--------------------------------
 
-//logo do login do adiministrador do Wordpress
-function cutom_login_logo() {
-	echo "<style type=\"text/css\">
-	body.login div#login h1 a {
-	background-image: url(". get_template_directory_uri() ."/assets/images/logo-adm.png) !important;
-	background-size: cover !important;
-	height: 230px !important;
-	width: 70% !important;
-	}
-	</style>";
-}
-add_action( 'login_enqueue_scripts', 'cutom_login_logo' );
-//------------------------------------------
-
 //Custon Post end Taxonomy
 require_once get_template_directory() . '/inc/custom-posts.php';
 //------------------------

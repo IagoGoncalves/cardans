@@ -16,5 +16,289 @@ Author URI: http://wpod.in/#colaboradores
         "wordpress/wordpress", // WordPress   Styles Core
         //"woocommerce",       // WooCommerce Styles Core
         "odin/core",           // Odin        Styles Core
-        "layout"               // Theme       Custom Layout
+        "layout",              // Theme       Custom Layout
+        url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')
 ;
+body {
+        font-family: 'Roboto', sans-serif;       
+}
+h1, h2, h3, h4, h5, p, a, b, title, span, input, button{
+        letter-spacing: 1.0px;  
+}
+@media (min-width: 1500px){
+        .container {
+            width: 1250px;
+        }
+}
+// Paleta de cor
+$azul-escuro: #0054a6;
+$azul-claro: #0174e4;
+$cinza: #6a6a6a;
+// 
+.align{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+h2{
+        font-size: 70px;
+        color: $azul-escuro;
+}
+main{
+        margin-top: 145px;
+}
+header{
+        @extend .col-md-12;
+        min-height: 0px;
+        padding: 0;
+        .container:before, .container:after {
+            content: " ";
+            display: none;
+        }
+        .navbar:before, .navbar:after {
+           content: " ";
+           display: none;
+        }
+        .main-navigation {
+                background: transparent;
+                background-color: transparent;
+                border: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: all .4s;
+                padding: 0;
+                margin: 0 !important;
+                @media screen and (max-width: 770px) and (min-width: 220px) {
+                        display: block;
+                }       
+                .logo-menu{
+                        .navbar-header{ // Menu mobile
+                                margin-top: -40px;
+                                button{
+                                        background-color: #89ccff;
+                                        border: 1px solid #01244e;
+                                        outline: -webkit-focus-ring-color auto 0px;
+                                        @media screen and (max-width: 770px) and (min-width: 220px) {
+                                                display: block;
+                                        }
+                                        &:hover{
+                                                background-color: #89ccff;
+                                        }
+                                }
+                                .icon-bar{
+                                        background-color: #fff;
+                                }
+                        }
+                        .navbar-nav {
+                                float: none;
+                                display: flex;
+                                justify-content: center;
+                                align-items: flex-end;
+                                transition: all .4s;
+                                @media screen and (max-width: 770px) and (min-width: 220px) {
+                                        display: block;
+                                        background: transparent;
+                                        margin: 0 -15px;
+                                        height: inherit;
+                                        transition: all .4s;
+                                        padding: 15px 0px;
+                                }                        
+                                li {
+                                        padding: 0 20px;
+                                        float: none;
+                                        display: inline-block;  
+                                        @media screen and (max-width: 770px) and (min-width: 220px) {
+                                                width: 100%;
+                                                margin-top: 5px;
+                                                padding: 0 0px;
+                                        }       
+                                        a {
+                                                position:relative;
+                                                display: block;
+                                                padding: 0 0 5px 0px;
+                                                margin-left: 10px;
+                                                text-transform: uppercase;
+                                                color: $cinza;
+                                                font-weight: 500;
+                                                font-size: 20px;
+                                                background: transparent;
+                                                transition: all 0.3s;
+                                                @media screen and (max-width: 430px) and (min-width: 220px) {
+                                                        padding: 5px 0;
+                                                        margin-top: 5px;
+                                                        font-size: 20px;
+                                                        margin-left: 0px;
+                                                }
+                                                &:before{
+                                                        transition: all .3s;
+                                                        content: ''; //obrigatorio
+                                                        background: #fff;
+                                                        height: 2px;
+                                                        width: 0%;
+                                                        position: absolute;
+                                                        bottom: -5px;
+                                                        left: 0px;
+                                                }
+                                                &:hover {  
+                                                        transition: all 0.3s;
+                                                        color: $azul-claro;
+                                                        border-bottom: 2px solid $azul-claro;
+                                                        &:before{
+                                                                width: 100%;
+                                                                transition: all .3s;
+                                                        }
+                                                }
+                                                &:focus {
+                                                outline: 0px auto -webkit-focus-ring-color; 
+                                                outline-offset: 0px; 
+                                                color: $azul-claro;
+                                                background-color: transparent;
+                                                }                                               
+                                        }
+                                        &.active a { 
+                                                padding: 0 0 5px 0px;
+                                                background-color: transparent;
+                                                color: $azul-claro;
+                                                position: relative;
+                                                border-bottom: 2px solid $azul-claro;
+                                                // @media screen and (max-width: 430px) and (min-width: 220px) {
+                                                //        border-bottom: 0px solid $azul-claro;
+                                                //        padding: 0px;
+                                                //        color: #addbff;
+                                                // }
+                                                &:hover { 
+                                                        color: $azul-claro;
+                                                        border-bottom: 2px solid $azul-claro;  
+                                                        transition: all 0.3s;
+                                                        background-color: transparent;
+                                                        // @media screen and (max-width: 430px) and (min-width: 220px) {
+                                                        //         border-bottom: 0px solid #FFFFFF;
+                                                        //         color: #addbff;
+                                                        // }
+                                                }
+                                                &:before{
+                                                        transition: all .3s;
+                                                        content: ''; //obrigatorio
+                                                        background: #fff;
+                                                        height: 2px;
+                                                        width: 0%;
+                                                        position: absolute;
+                                                        bottom: -5px;
+                                                        left: 0px;
+                                                } 
+                                                &:focus {
+                                                        outline: 0px auto -webkit-focus-ring-color; 
+                                                        outline-offset: 0px; 
+                                                        color: #fff;
+                                                        background-color: transparent;
+                                                }       
+                                        }
+                                }
+                        }                               
+                }
+                .social{
+                        div{
+
+                        }
+                        .telefone{
+                                background-color: $azul-escuro;
+                                color: #fff;
+                                font-size: 20px;
+                                text-decoration: none;
+                                padding: 50px 0;
+                        }
+                }
+        }
+        .menu{
+                position: fixed;
+                top: 0;
+                background-color: #fff;
+                width: 100%;
+                z-index: 999;
+                transition: all .4s; 
+        }
+        .menu-fixo{
+                width: 100%;
+                padding: 0;
+                transition: all .4s;
+                z-index: 999;
+                background-color: #fff;   
+                .main-navigation {                      
+                        padding: 10px 0;
+                }
+                .logo-principal{
+                        img{
+                                width: 75px;
+                        }
+                }  
+        } 
+        // @media screen and (max-width: 1500px) and (min-width: 1000px) {
+        //         .menu{
+        //                 background-color: #00284d;
+        //                 .logo-principal{
+        //                         img{
+        //                                 width: 90px;
+        //                         }
+        //                 }
+        //         }
+        // }
+        // @media screen and (max-width: 1000px) and (min-width: 770px){
+        //         .menu{
+        //                 background-color: #00284d;
+        //                 .logo-principal{
+        //                         display: none;
+        //                 }
+
+        //         }
+        // }
+        // @media screen and (max-width: 772px) and (min-width: 768px) {
+        //         .main-navigation{
+        //                 .logo-principal{
+        //                         display: none;
+        //                 }
+        //         }
+        // }
+        // @media screen and (max-width: 768px) and (min-width: 220px) {
+        //         .main-navigation{
+        //                 .navbar-header{
+        //                         margin-top: -65px;
+        //                 }
+        //                 .navbar-collapse{
+        //                         margin-top: 20px;
+        //                 }
+        //         }
+        //         .menu{
+        //                 background-color: #00284d;
+        //                 .logo-principal{
+        //                         img{
+        //                                 width: 90px;
+        //                         }
+        //                 }
+
+        //         }
+        //         .menu-fixo{
+        //                 transition: all .4s;
+        //                 width: 100%;
+        //                 z-index: 999;
+        //                 background-color: #01244e;   
+        //                 .main-navigation {                      
+        //                         padding: 10px 0;
+
+        //                 }
+        //                 .logo-principal{
+        //                         img{
+        //                                 width: 75px;
+        //                         }
+        //                 }  
+        //         } 
+        // }
+}
+.home{
+        @extend .col-md-12;
+        padding: 0;
+        .container{
+                padding: 0;
+                background-color: grey;
+        }
+}

@@ -12,65 +12,29 @@ function type_post_porsonalizados() {
       $banner->set_arguments(
          array(
             'public' => true,
-            'supports' => array('title','thumbnail'),
+            'supports' => array('title', 'editor', 'thumbnail'),
             'has_archive' => true,
             'menu_icon' => 'dashicons-format-image'   
          )
       );
-   //Editais--------------------------------------
-      $editais = new Odin_Post_Type(
-         'Comunicado',
-         'editais'
+   //Dados
+      $dados = new Odin_Post_Type(
+         'Dados da empresa',
+         'dados'
       );
-      $editais->set_labels(
-         array( 'menu_name' => __( 'Editais', 'odin' ))
+      $dados->set_labels(
+         array( 'menu_name' => __( 'Dados da empresa', 'odin' ))
       );
-      $editais->set_arguments(
+      $dados->set_arguments(
          array(
             'public' => true,
-            'supports' => array('title','thumbnail'),
+            'supports' => array('title','editor','author','revisions'),
             'has_archive' => true,
-            'menu_icon' => 'dashicons-format-aside',
-            'show_in_nav_menus' => true,
-            'show_in_rest' => true   
+            'menu_icon' => 'dashicons-id-alt',
+            'show_in_nav_menus'   => true,
+               'show_in_rest' => true
          )
       );
-   //Noticia--------------------------------------
-      $noticia = new Odin_Post_Type(
-         'Notícia',
-         'noticia'
-      );
-      $noticia->set_labels(
-         array( 'menu_name' => __( 'Notícia', 'odin' ))
-      );
-      $noticia->set_arguments(
-         array(
-            'public' => true,
-            'supports' => array('title','author','thumbnail','revisions', 'editor'),
-            'has_archive' => true,
-            'menu_icon' => 'dashicons-welcome-widgets-menus',
-            'show_in_nav_menus' => true,
-            'show_in_rest' => true
-         )
-      );
-   //Contatos------------------------------------------------
-      $contatos = new Odin_Post_Type(
-         'Contato',
-         'contatos'
-      );
-      $contatos->set_labels(
-         array( 'menu_name' => __( 'Contatos', 'odin' ))
-      );
-      $contatos->set_arguments(
-         array(
-            'public' => true,
-            'supports' => array('title', 'author'),
-            'has_archive' => true,
-            'menu_icon' => 'dashicons-phone',
-            'show_in_nav_menus' => true
-         )
-      );
-   //-----------------------------------------------------      
 }
 
 add_action('init', 'type_post_porsonalizados', 1);
