@@ -2,7 +2,6 @@
 
 function custom_metabox() {
    global $post;
-  
 //Dados
    $post_metabox = new Odin_Metabox(
       'conteudo-dados', // Slug/ID of the Metabox (Required)

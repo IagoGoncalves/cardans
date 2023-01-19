@@ -12,6 +12,9 @@
 
 	<footer id="footer" role="contentinfo">
         <article class="container">
+			<div class="logo">
+                <a href="<?php echo esc_url( home_url( 'home' ) ); ?>" alt="Cardans" title="Cardans"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-rodape.png"/></a>
+            </div>
             <?php
                 $args = array('post_type' => 'dados','posts_per_page' => 1);
                     $var = new WP_Query($args);
@@ -19,7 +22,8 @@
                         while($var->have_posts()):
                             $var->the_post(); ?>
                                 <?php 
-                                    $telefone =  get_post_meta( $post->ID,'telefone1', true );
+                                    $telefone =  get_post_meta( $post->ID,'telefone', true );
+                                    $telefone2 =  get_post_meta( $post->ID,'telefone2', true );
                                     $whatsapp =  get_post_meta( $post->ID,'whatsapp', true );
                                     $logradouro =  get_post_meta( $post->ID,'logradouro', true );
                                     $endereco =  get_post_meta( $post->ID,'endereco', true );
@@ -27,78 +31,63 @@
                                     $bairro =  get_post_meta( $post->ID,'bairro', true );
                                     $cidade =  get_post_meta( $post->ID,'cidade', true );
                                     $estado =  get_post_meta( $post->ID,'estado', true );
-                                    $cep =  get_post_meta( $post->ID,'cep', true );
-									$email =  get_post_meta( $post->ID,'email1', true );
                                     $complemento =  get_post_meta( $post->ID,'complemento', true );
                                     $facebook =  get_post_meta( $post->ID,'facebook', true );
                                     $instagram =  get_post_meta( $post->ID,'instagram', true );
                                 ?>
-								 <div class="logo">
-									<a href="<?php echo esc_url( home_url( 'home' ) ); ?>" alt="GO Alvarenga" title="GO Alvarenga"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"/></a>
-								</div>
-								<div class="endereco">
-									<?php if ($endereco != '') { ?> 
-										<a class="loc" href="https://goo.gl/maps/jKnNByFr4hV1MPft9" target="_blank">
-										<svg width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M16.7857 17.5C19.8715 17.5 22.381 15.2575 22.381 12.5C22.381 9.7425 19.8715 7.5 16.7857 7.5C13.7 7.5 11.1905 9.7425 11.1905 12.5C11.1905 15.2575 13.7 17.5 16.7857 17.5ZM16.7857 10C18.3286 10 19.5833 11.1212 19.5833 12.5C19.5833 13.8787 18.3286 15 16.7857 15C15.2428 15 13.9881 13.8787 13.9881 12.5C13.9881 11.1212 15.2428 10 16.7857 10Z" fill="white"/>
-											<path d="M15.9744 27.2675C16.2111 27.4186 16.4948 27.4998 16.7857 27.4998C17.0766 27.4998 17.3603 27.4186 17.597 27.2675C18.0222 26.9987 28.0167 20.55 27.9762 12.5C27.9762 6.98625 22.9558 2.5 16.7857 2.5C10.6155 2.5 5.59522 6.98625 5.59522 12.4937C5.55465 20.55 15.5491 26.9987 15.9744 27.2675ZM16.7857 5C21.4144 5 25.1785 8.36375 25.1785 12.5063C25.2079 18.0538 19.0406 23.035 16.7857 24.6688C14.5322 23.0338 8.36346 18.0513 8.39283 12.5C8.39283 8.36375 12.157 5 16.7857 5Z" fill="white"/>
-										</svg>
-											<?php echo $logradouro ?> <?php echo $endereco ?>, <?php echo $numero ?> | <?php echo $complemento ?> <br><?php echo $bairro ?> | <?php echo $cidade ?> - <?php echo $estado ?> <br> CEP: <?php echo $cep ?>        
-										</a>  
-									<?php } else { ?>
-										<span class="desabilitado"></span>
-									<?php } ?>
-								</div>
-								<div class="telefones alinhamento">
-									<?php if ($telefone != '') { ?> 
-											<a class="telefone alinhamento" href="tel:<?php echo $telefone ?>" alt="tel: <?php echo $telefone ?>" title="tel: <?php echo $telefone ?>" target="_blank">    
-												<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M4.63 2.83333C4.7 3.87167 4.875 4.88667 5.155 5.855L3.755 7.255C3.27667 5.855 2.97333 4.37333 2.86833 2.83333H4.63ZM16.1333 16.8567C17.125 17.1367 18.14 17.3117 19.1667 17.3817V19.12C17.6267 19.015 16.145 18.7117 14.7333 18.245L16.1333 16.8567ZM5.75 0.5H1.66667C1.025 0.5 0.5 1.025 0.5 1.66667C0.5 12.6217 9.37833 21.5 20.3333 21.5C20.975 21.5 21.5 20.975 21.5 20.3333V16.2617C21.5 15.62 20.975 15.095 20.3333 15.095C18.8867 15.095 17.475 14.8617 16.1683 14.43C16.0517 14.3833 15.9233 14.3717 15.8067 14.3717C15.5033 14.3717 15.2117 14.4883 14.9783 14.71L12.4117 17.2767C9.11 15.585 6.40333 12.89 4.72333 9.58833L7.29 7.02167C7.61667 6.695 7.71 6.24 7.58167 5.83167C7.15 4.525 6.91667 3.125 6.91667 1.66667C6.91667 1.025 6.39167 0.5 5.75 0.5Z" fill="white"/>
-												</svg>
-												<?php echo $telefone ?>
+                                <div class="dados">
+									<div class="agrupador">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/gps-white.png"/>
+										<?php if ($endereco != '') { ?> 
+											<a class="loc" href="https://goo.gl/maps/s2fEp9xoL1n7ejVT6" target="_blank">
+												<?php echo $logradouro ?> <?php echo $endereco ?>, <?php echo $numero ?> Bairro <?php echo $bairro ?> <br> <?php echo $cidade ?>/<?php echo $estado ?> <?php echo $complemento ?>
+											</a>  
+										<?php } else { ?>
+											<span class="desabilitado"></span>
+										<?php } ?> 
+									</div>
+
+									<div class="agrupador">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call.png"/>
+										<?php if ($telefone != '') { ?> 
+											<a class="telefone" href="tel:<?php echo $telefone ?>" alt="tel: <?php echo $telefone ?>" title="tel: <?php echo $telefone ?>" target="_blank">    
+												<?php echo $telefone ?> | 
 											</a>
-									<?php } else { ?>
-										<span class="desabilitado"></span>
-									<?php } ?>
+										<?php } else { ?>
+											<span class="desabilitado"></span>
+										<?php } ?>
 
-									<?php if ($whatsapp != '') { ?> 
-											<a class="whatsapp alinhamento" href="https://api.whatsapp.com/send?phone=55<?php echo $whatsapp ?>&text=Olá, vim pelo site da GO Alvarenga" alt="<?php echo $whatsapp ?>" title="<?php echo $whatsapp ?>1" target="_blank">
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M20.225 3.7285C18.0433 1.53516 15.1383 0.333496 12.0467 0.333496C5.67666 0.333496 0.484996 5.52516 0.484996 11.8952C0.484996 13.9368 1.02166 15.9202 2.025 17.6702L0.391663 23.6668L6.51666 22.0568C8.20833 22.9785 10.11 23.4685 12.0467 23.4685C18.4167 23.4685 23.6083 18.2768 23.6083 11.9068C23.6083 8.81516 22.4067 5.91016 20.225 3.7285ZM12.0467 21.5085C10.32 21.5085 8.62833 21.0418 7.14666 20.1668L6.79666 19.9568L3.15666 20.9135L4.125 17.3668L3.89166 17.0052C2.935 15.4768 2.42166 13.7035 2.42166 11.8952C2.42166 6.5985 6.73833 2.28183 12.035 2.28183C14.6017 2.28183 17.0167 3.28516 18.825 5.10516C20.645 6.92516 21.6367 9.34016 21.6367 11.9068C21.66 17.2035 17.3433 21.5085 12.0467 21.5085ZM17.32 14.3218C17.0283 14.1818 15.605 13.4818 15.3483 13.3768C15.08 13.2835 14.8933 13.2368 14.695 13.5168C14.4967 13.8085 13.9483 14.4618 13.785 14.6485C13.6217 14.8468 13.4467 14.8702 13.155 14.7185C12.8633 14.5785 11.93 14.2635 10.8333 13.2835C9.97 12.5135 9.39833 11.5685 9.22333 11.2768C9.06 10.9852 9.2 10.8335 9.35166 10.6818C9.48 10.5535 9.64333 10.3435 9.78333 10.1802C9.92333 10.0168 9.98166 9.8885 10.075 9.70183C10.1683 9.5035 10.1217 9.34016 10.0517 9.20016C9.98166 9.06016 9.39833 7.63683 9.165 7.0535C8.93166 6.4935 8.68666 6.5635 8.51166 6.55183C8.33666 6.55183 8.15 6.55183 7.95166 6.55183C7.75333 6.55183 7.45 6.62183 7.18166 6.9135C6.925 7.20516 6.17833 7.90516 6.17833 9.3285C6.17833 10.7518 7.21666 12.1285 7.35666 12.3152C7.49666 12.5135 9.39833 15.4302 12.2917 16.6785C12.98 16.9818 13.5167 17.1568 13.9367 17.2852C14.625 17.5068 15.255 17.4718 15.7567 17.4018C16.3167 17.3202 17.4717 16.7018 17.705 16.0252C17.95 15.3485 17.95 14.7768 17.8683 14.6485C17.7867 14.5202 17.6117 14.4618 17.32 14.3218Z" fill="white"/>
-											</svg>
-											<?php echo $whatsapp ?>
-										</a>
-									<?php } else { ?>
-										<span class="desabilitado"></span>
-									<?php } ?> 
+										<?php if ($telefone2 != '') { ?> 
+											<a class="telefone2" href="tel:<?php echo $telefone2 ?>" alt="tel: <?php echo $telefone2 ?>" title="tel: <?php echo $telefone2 ?>" target="_blank">    
+												<?php echo $telefone2 ?>
+											</a>
+										<?php } else { ?>
+											<span class="desabilitado"></span>
+										<?php } ?>
+									</div>
 
-									<?php if ($email != '') { ?> 
-											<a class="email alinhamento" href="mailto:<?php echo $email ?>" target="_blank">
-											<svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M21.6562 0.375H1.34375C0.911621 0.375 0.5625 0.766016 0.5625 1.25V18.75C0.5625 19.234 0.911621 19.625 1.34375 19.625H21.6562C22.0884 19.625 22.4375 19.234 22.4375 18.75V1.25C22.4375 0.766016 22.0884 0.375 21.6562 0.375ZM20.6797 3.40469V17.6562H2.32031V3.40469L1.64648 2.8168L2.60596 1.43594L3.65088 2.34648H19.3516L20.3965 1.43594L21.356 2.8168L20.6797 3.40469ZM19.3516 2.34375L11.5 9.17969L3.64844 2.34375L2.60352 1.4332L1.64404 2.81406L2.31787 3.40195L10.6577 10.6645C10.8976 10.8731 11.1926 10.9864 11.4963 10.9864C11.8001 10.9864 12.0951 10.8731 12.335 10.6645L20.6797 3.40469L21.3535 2.8168L20.394 1.43594L19.3516 2.34375Z" fill="white"/>
-											</svg>
-											<?php echo $email ?>
-										</href=>
-									<?php } else { ?>
-										<span class="desabilitado"></span>
-									<?php } ?> 
-								</div>
-                                <div class="rede-socias">
-                                     <?php if ($facebook != '') { ?> 
-                                        <a href="<?php echo $facebook ?>" alt="Facebook" title="Facebook" target="_blank">
-											<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M29.6453 0.281982H1.50557C0.828841 0.281982 0.282104 0.828719 0.282104 1.50545V29.6452C0.282104 30.3219 0.828841 30.8687 1.50557 30.8687H29.6453C30.322 30.8687 30.8688 30.3219 30.8688 29.6452V1.50545C30.8688 0.828719 30.322 0.281982 29.6453 0.281982ZM26.1126 9.20947H23.6694C21.754 9.20947 21.3831 10.1194 21.3831 11.4576V14.4054H25.9558L25.3594 19.0201H21.3831V30.8687H16.6154V19.024H12.6277V14.4054H16.6154V11.0026C16.6154 7.05311 19.0279 4.90057 22.553 4.90057C24.2429 4.90057 25.692 5.02674 26.1164 5.08409V9.20947H26.1126Z" fill="white"/>
-											</svg>
+									<div class="agrupador">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp-white.png"/>
+										<?php if ($whatsapp != '') { ?> 
+											<a class="whatsapp" href="https://api.whatsapp.com/send?phone=55<?php echo $whatsapp ?>&text=Olá, vim pelo site da Cardans" alt="<?php echo $whatsapp ?>" title="<?php echo $whatsapp ?>1" target="_blank">
+												<?php echo $whatsapp ?>
+											</a>
+										<?php } else { ?>
+											<span class="desabilitado"></span>
+										<?php } ?>
+									</div>
+                                </div>
+                                <div class="rede-socias align">
+									<?php if ($instagram != '') { ?> 
+                                        <a href="<?php echo $instagram ?>" class="instagram align" alt="instagram" title="instagram" target="_blank">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-white.png"/>
                                         </a>
                                     <?php } else { ?>
                                         <span class="desabilitado"></span>
                                     <?php } ?>
-                                    
-                                    <?php if ($instagram != '') { ?> 
-                                        <a href="<?php echo $instagram ?>" class="instagram" alt="instagram" title="instagram" target="_blank">
-											<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M16.6581 11.1627C13.7193 11.1627 11.3209 13.5611 11.3209 16.4999C11.3209 19.4388 13.7193 21.8371 16.6581 21.8371C19.597 21.8371 21.9954 19.4388 21.9954 16.4999C21.9954 13.5611 19.597 11.1627 16.6581 11.1627ZM32.6658 16.4999C32.6658 14.2898 32.6858 12.0996 32.5617 9.89347C32.4375 7.33098 31.853 5.05676 29.9791 3.18293C28.1013 1.3051 25.8311 0.724531 23.2686 0.60041C21.0584 0.476289 18.8683 0.496308 16.6622 0.496308C14.452 0.496308 12.2619 0.476289 10.0557 0.60041C7.49321 0.724531 5.21899 1.3091 3.34516 3.18293C1.46733 5.06076 0.886762 7.33098 0.762641 9.89347C0.63852 12.1036 0.65854 14.2938 0.65854 16.4999C0.65854 18.7061 0.63852 20.9002 0.762641 23.1064C0.886762 25.6689 1.47133 27.9431 3.34516 29.8169C5.22299 31.6947 7.49321 32.2753 10.0557 32.3994C12.2659 32.5235 14.456 32.5035 16.6622 32.5035C18.8723 32.5035 21.0624 32.5235 23.2686 32.3994C25.8311 32.2753 28.1053 31.6907 29.9791 29.8169C31.857 27.9391 32.4375 25.6689 32.5617 23.1064C32.6898 20.9002 32.6658 18.7101 32.6658 16.4999ZM16.6581 24.7119C12.1137 24.7119 8.44614 21.0444 8.44614 16.4999C8.44614 11.9555 12.1137 8.28791 16.6581 8.28791C21.2026 8.28791 24.8702 11.9555 24.8702 16.4999C24.8702 21.0444 21.2026 24.7119 16.6581 24.7119ZM25.2065 9.86945C24.1455 9.86945 23.2886 9.01262 23.2886 7.95158C23.2886 6.89055 24.1455 6.03371 25.2065 6.03371C26.2675 6.03371 27.1244 6.89055 27.1244 7.95158C27.1247 8.20353 27.0753 8.45306 26.979 8.68589C26.8827 8.91872 26.7415 9.13027 26.5633 9.30842C26.3852 9.48658 26.1736 9.62784 25.9408 9.72411C25.708 9.82038 25.4584 9.86977 25.2065 9.86945Z" fill="white"/>
-											</svg>
+									<?php if ($facebook != '') { ?> 
+                                        <a class="align" href="<?php echo $facebook ?>" alt="Facebook" title="Facebook" target="_blank">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-logo-white.png"/>
                                         </a>
                                     <?php } else { ?>
                                         <span class="desabilitado"></span>
@@ -108,7 +97,7 @@
                         endwhile;
                     endif;
                 wp_reset_postdata(); 
-            ?>
+            ?>         
         </article>
         <article class="copyright">
             <div class="container">

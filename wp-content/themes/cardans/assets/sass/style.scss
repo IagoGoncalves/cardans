@@ -22,9 +22,6 @@ Author URI: http://wpod.in/#colaboradores
 body {
         font-family: 'Roboto', sans-serif;       
 }
-h1, h2, h3, h4, h5, p, a, b, title, span, input, button{
-        letter-spacing: 1.0px;  
-}
 @media (min-width: 1500px){
         .container {
             width: 1250px;
@@ -45,7 +42,7 @@ h2{
         color: $azul-escuro;
 }
 main{
-        margin-top: 145px;
+        margin-top: 132px;
 }
 header{
         @extend .col-md-12;
@@ -73,6 +70,11 @@ header{
                         display: block;
                 }       
                 .logo-menu{
+                        display: flex;
+                        align-items: center;
+                        .logo-principal{
+                                padding-left: 120px;
+                        }
                         .navbar-header{ // Menu mobile
                                 margin-top: -40px;
                                 button{
@@ -96,6 +98,7 @@ header{
                                 justify-content: center;
                                 align-items: flex-end;
                                 transition: all .4s;
+                                margin-left: 120px;
                                 @media screen and (max-width: 770px) and (min-width: 220px) {
                                         display: block;
                                         background: transparent;
@@ -116,8 +119,8 @@ header{
                                         a {
                                                 position:relative;
                                                 display: block;
-                                                padding: 0 0 5px 0px;
-                                                margin-left: 10px;
+                                                // margin-left: 10px;
+                                                padding: 55px 0;
                                                 text-transform: uppercase;
                                                 color: $cinza;
                                                 font-weight: 500;
@@ -143,11 +146,6 @@ header{
                                                 &:hover {  
                                                         transition: all 0.3s;
                                                         color: $azul-claro;
-                                                        border-bottom: 2px solid $azul-claro;
-                                                        &:before{
-                                                                width: 100%;
-                                                                transition: all .3s;
-                                                        }
                                                 }
                                                 &:focus {
                                                 outline: 0px auto -webkit-focus-ring-color; 
@@ -157,30 +155,22 @@ header{
                                                 }                                               
                                         }
                                         &.active a { 
-                                                padding: 0 0 5px 0px;
+                                                padding: 50px 0;
                                                 background-color: transparent;
-                                                color: $azul-claro;
+                                                color: $azul-escuro;
                                                 position: relative;
-                                                border-bottom: 2px solid $azul-claro;
+                                                font-weight: 600;
+                                                border-bottom: 5px solid $azul-claro;
                                                 // @media screen and (max-width: 430px) and (min-width: 220px) {
                                                 //        border-bottom: 0px solid $azul-claro;
                                                 //        padding: 0px;
                                                 //        color: #addbff;
                                                 // }
-                                                &:hover { 
-                                                        color: $azul-claro;
-                                                        border-bottom: 2px solid $azul-claro;  
-                                                        transition: all 0.3s;
-                                                        background-color: transparent;
-                                                        // @media screen and (max-width: 430px) and (min-width: 220px) {
-                                                        //         border-bottom: 0px solid #FFFFFF;
-                                                        //         color: #addbff;
-                                                        // }
-                                                }
+                                                
                                                 &:before{
                                                         transition: all .3s;
                                                         content: ''; //obrigatorio
-                                                        background: #fff;
+                                                        background: $azul-claro;
                                                         height: 2px;
                                                         width: 0%;
                                                         position: absolute;
@@ -190,7 +180,7 @@ header{
                                                 &:focus {
                                                         outline: 0px auto -webkit-focus-ring-color; 
                                                         outline-offset: 0px; 
-                                                        color: #fff;
+                                                        color: $azul-escuro;
                                                         background-color: transparent;
                                                 }       
                                         }
@@ -198,15 +188,21 @@ header{
                         }                               
                 }
                 .social{
+                        display: flex;
+                        align-items: center;
                         div{
-
+                                margin-right: 100px;
+                                a{
+                                        text-decoration: none;
+                                        margin-right: 20px;
+                                }
                         }
                         .telefone{
                                 background-color: $azul-escuro;
                                 color: #fff;
                                 font-size: 20px;
                                 text-decoration: none;
-                                padding: 50px 0;
+                                padding: 50px 70px;
                         }
                 }
         }
@@ -223,14 +219,8 @@ header{
                 padding: 0;
                 transition: all .4s;
                 z-index: 999;
-                background-color: #fff;   
                 .main-navigation {                      
-                        padding: 10px 0;
-                }
-                .logo-principal{
-                        img{
-                                width: 75px;
-                        }
+                        box-shadow: 0px 0px 15px -8px #000;
                 }  
         } 
         // @media screen and (max-width: 1500px) and (min-width: 1000px) {
@@ -294,11 +284,366 @@ header{
         //         } 
         // }
 }
+footer{
+        @extend .col-md-12;
+        background: $azul-escuro;
+        padding: 0;
+        article{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 80px 0;
+                .logo{
+                        width: 100%;
+                }
+                .dados{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-direction: column; 
+                        a{
+                                color: #fff;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                transition: .3s all;
+                                margin-left: 20px;
+                                font-size: 18px;
+                        } 
+                        .agrupador{
+                                display: flex;
+                                justify-content: center;
+                                align-items: flex-start;
+                                margin-bottom: 20px;
+                                .telefone2{
+                                        margin-left: 5px;
+                                }
+                        }
+                        .whatsapp{
+                                padding: 10px 0;
+                                color: #fff;
+                                svg{
+                                        margin-right: 15px;
+                                }
+                        }
+                        .loc{
+                                align-items: flex-start;
+                                display: flex;
+                        }
+
+                }
+                .rede-socias{
+                        .instagram{
+                                margin-right: 10px;
+                        }
+                }
+                // @media only screen and (max-width: 770px){
+                //         padding-top: 50px;
+                //         padding-bottom: 50px;
+                //         flex-direction: column;
+                //         .rede-socias{
+                //                 padding: 0;
+                //                 a{
+                //                         padding-left: 0px;
+                //                 }
+                //         }
+                //         .logo{
+                //                 display: none;
+                //         }
+                // }
+        }
+        .copyright{
+                @extend .col-md-12;
+                padding: 0;
+                background: $azul-escuro;
+                .container{
+                        display: flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        border-top: 1px solid white;    
+                        padding: 10px 0;
+                        p{
+                                font-size: 14px;
+                                color: #fff;
+                                margin: 0;
+                        }
+                }       
+        }
+        // @media only screen and (max-width: 600px){
+        //         article{
+        //                 .dados{
+        //                         .telefones{
+        //                                 a{
+        //                                         font-size: 16px;
+        //                                 }
+        //                         }
+        //                 }
+        //                 .rede-socias{
+        //                         justify-content: flex-start;
+        //                         padding: 0 15px;
+        //                 }
+        //         }
+        //         .copyright{
+        //                 p{
+        //                         font-size: 10px;
+        //                 }
+        //         }
+        // }
+}
 .home{
         @extend .col-md-12;
         padding: 0;
-        .container{
-                padding: 0;
-                background-color: grey;
-        }
+        .banner{
+                height: 86vh;
+                position: relative;
+                .swiper-container {
+                        width: 100%;
+                        height: 100%;
+                        background: $azul-escuro;
+                        position: relative;
+                        .swiper-wrapper{
+                                .swiper-slide {
+                                        font-size: 18px;
+                                        color: #fff;
+                                        -webkit-box-sizing: border-box;
+                                        box-sizing: border-box;
+                                        padding: 0px; 
+                                        .padrao-banner{
+                                                .foto-banner{
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        overflow: hidden;
+                                                        position:relative;                              
+                                                        .foto{
+                                                                background-repeat: no-repeat;
+                                                                background-position: center;
+                                                                background-size: cover;
+                                                                position: relative;
+                                                                width: 100%;
+                                                                height: 100%;   
+                                                                img{
+                                                                        max-width: 100%;
+                                                                }    
+                                                        }
+                                                }
+                                                .descricoes{
+                                                        position: absolute;
+                                                        z-index: 999;
+                                                        top: 50%;
+                                                        left: 7%;
+                                                        transform: translateY(-50%); 
+                                                        width: 35%;
+                                                        h2{
+                                                                margin: 0;
+                                                                font-size: 90px;
+                                                                color: #fff;
+                                                                font-weight: 200;
+                                                                padding: 0;
+                                                                text-transform: uppercase;
+                                                                text-align: end;
+                                                                b{
+                                                                        font-weight: 500;
+                                                                }
+                                                        } 
+                                                        h4{
+                                                                margin: 40px 0 0 0;
+                                                                text-align: end;
+                                                                font-weight: 300;
+                                                                font-size: 18px;
+                                                        }
+                                                        // @media screen and (max-width: 600px){
+                                                        //         width: 80%;
+                                                        //         max-width: 100%;
+                                                        //         h2{
+                                                        //                 width: 50%; 
+                                                        //                 padding: 0;
+                                                        //                 font-size: 32px;
+                                                        //         }
+                                                        // }                        
+                                                }   
+                                        }
+                                }
+                                .swiper-slide-active{
+                                        opacity: 1 !important;
+                                }
+                        }
+                        .navegation{
+                                position: absolute;
+                                z-index: 9;
+                                bottom: 10%;
+                                left: 23%;
+                                transform: translate(-25%, -10%);
+                                .swiper-button-white{
+                                        position: relative;
+                                        width: 100px;
+                                        height: 40px;
+                                        margin: 0 10px;
+                                }
+                                .swiper-button-prev{
+                                        background-image: url(../images/seta-esquerda-branca.png);
+                                        background-size: auto;
+                                }
+                                .swiper-button-next{
+                                        background-image: url(../images/seta-direita-branca.png);
+                                        background-size: auto;
+                                }
+                        }
+                        .swiper-pagination{
+                                position: absolute;
+                                width: max-content;
+                                bottom: 10%;
+                                left: auto;
+                                right: 20%;
+                                transform: translate(-10%, -10%);
+                                .swiper-pagination-bullet {
+                                        width: 20px;
+                                        height: 20px;
+                                        text-align: center;
+                                        line-height: 20px;
+                                        opacity: 1;
+                                        background: #fff;
+                                        border-radius: 0;       
+                                        margin: 0 12px;             
+                                        &:focus {
+                                                outline: -webkit-focus-ring-color auto 0px;
+                                        }
+                                }
+                                .swiper-pagination-bullet-active {
+                                        color: $azul-escuro;
+                                        background: $azul-escuro;
+                                        border-bottom: 2px solid $azul-escuro;
+                                }  
+                        }
+                }
+                // @media screen and (max-width: 1880px){
+                //         .swiper-container{
+                //                 overflow: hidden;
+                //         }
+                // }
+                // @media screen and (max-width: 1500px){
+                //         height: auto;
+                //         .swiper-container{
+                //                 .navegation{
+                //                         position: absolute;
+                //                         left: 50%;
+                //                         z-index: 99;
+                //                         transform: translateX(-50%);
+                //                         .swiper-pagination{
+                //                                 left: 0;
+                //                         }
+                //                 }
+                //         }
+                // }
+                // @media screen and (max-width: 1200px){
+                //         .swiper-container{
+                //                 .swiper-wrapper{
+                //                         .swiper-slide{
+                //                                 .padrao-banner{
+                //                                         .descricoes{
+                //                                                 h2{
+                //                                                         font-size: 42px;
+                //                                                 }
+                //                                         }
+                //                                 }
+                //                                 .banner2, .banner3{
+                //                                         .descricoes{
+                //                                                 width: 100%;
+                //                                         }
+                //                                 }
+                //                         }
+                //                 }
+                //         }
+                // }
+                // @media screen and (max-width: 770px){
+                //         .swiper-container{
+                //                 .swiper-wrapper{
+                //                         .swiper-slide{
+                //                                 .padrao-banner{
+                //                                         .descricoes{
+                //                                                 h2{
+                //                                                         font-size: 28px;
+                //                                                 }
+                //                                         }
+                //                                 }
+                //                         }
+                //                 }
+                //                 .navegation{
+                //                         margin-top: -35px;
+                //                         .swiper-button-white{
+                //                                 width: 30px;
+                //                                 height: 10px;
+                //                         }
+                //                         .swiper-pagination{
+                //                                 bottom: 1px;
+                //                                 .swiper-pagination-bullet{
+                //                                         width: 25px;
+                //                                         height: 8px;
+                //                                         margin: 0 5px;
+                //                                 }
+                //                                 .swiper-button-white{
+                //                                         margin-top: -54px;
+                //                                         width: 25px;
+                //                                         height: 8px;
+                //                                 }
+                //                         }
+                //                 }
+                //         }
+                // }
+                // @media screen and (max-width: 600px){
+                //         .swiper-container{
+                //                 .swiper-wrapper{
+                //                         .swiper-slide{
+                //                                 .padrao-banner{
+                //                                         .descricoes{
+                //                                                 h2{
+                //                                                         font-size: 22px;
+                //                                                 }
+                //                                         }
+                //                                 }
+                //                                 .banner1{
+                //                                         .descricoes{
+                //                                                 width: 100%;
+                //                                         }
+                //                                 }
+                //                                 .banner2, .banner3{
+                //                                         .descricoes{
+                //                                                 h2{
+                //                                                         width: 100%;
+                //                                                 }
+                //                                         }
+                //                                 }
+                //                         }
+                //                 }
+                //         }
+                // }
+                // @media screen and (max-width: 457px){
+                //         .swiper-container{
+                //                 .swiper-wrapper{
+                //                         .swiper-slide{
+                //                                 .padrao-banner{
+                //                                         .foto-banner{
+                //                                                 .foto{
+                //                                                         img{
+                //                                                                 max-width: 120%;
+                //                                                         }
+                //                                                 }
+                //                                         }
+                //                                         .descricoes{
+                //                                                 h2{
+                //                                                         font-size: 16px;
+                //                                                 }
+                //                                         }
+                //                                 }
+                //                         }
+                //                 }
+                //                 .navegation{
+                //                         .swiper-pagination{
+                //                                 right: 0;
+                //                                 transform: translate(0%);
+                //                         }
+                //                 }
+                //         }
+                // }
+        } 
 }
