@@ -24,7 +24,7 @@ body {
 }
 @media (min-width: 1500px){
         .container {
-            width: 1250px;
+            width: 1380px;
         }
 }
 // Paleta de cor
@@ -40,6 +40,8 @@ $cinza: #6a6a6a;
 h2{
         font-size: 70px;
         color: $azul-escuro;
+        font-weight: 400;
+        text-align: center;
 }
 main{
         margin-top: 132px;
@@ -472,8 +474,8 @@ footer{
                                 position: absolute;
                                 z-index: 9;
                                 bottom: 10%;
-                                left: 23%;
-                                transform: translate(-25%, -10%);
+                                left: 20%;
+                                transform: translate(-10%, -10%);
                                 .swiper-button-white{
                                         position: relative;
                                         width: 100px;
@@ -646,4 +648,190 @@ footer{
                 //         }
                 // }
         } 
+        .container{
+                .card{
+                        position: relative;
+                        top: -30px;
+                        z-index: 1;
+                        article{
+                                flex-direction: column;
+                                background-color: $azul-escuro;
+                                width: 100%;
+                                width: 450px;
+                                height: 190px;
+                                text-align: center;
+                                h4{
+                                        font-size: 20px;
+                                        color: #fff;
+                                        margin: 25px 0 0 0;
+                                        font-weight: 300;
+                                }
+                                h3{
+                                        font-size: 25px;
+                                        color: #fff;
+                                        margin: 10px 0 0 0;
+                                }
+                                &:nth-child(2){
+                                        background-color: #0060bd;
+                                }
+                        }
+                }
+                .servico{
+                        margin: 100px 0;
+                        h2{
+                                margin: 0 0 70px 0;
+                        }
+                        .margins{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-flow: wrap;
+                                .card{
+                                        @extend .col-md-3;
+                                        width: 24%;
+                                        margin-bottom: 1%;
+                                        position: relative;
+                                        padding: 0;
+                                        overflow: hidden;
+                                        transition: all .4s;
+                                        // @media screen and (max-width: 1300px){
+                                        //         width: 32%;
+                                        //         height: 180px
+                                        // }
+                                        // @media screen and (max-width: 847px){
+                                        //         width: 48%;
+                                        //         height: 180px;
+                                        // }
+                                        // @media screen and (max-width: 570px){
+                                        //         width: 100%;
+                                        //         height: 180px;
+                                        // }
+                                        img{
+                                                width: 100%;
+                                        }
+                                        .saiba-mais{
+                                                content: "";
+                                                position: absolute;
+                                                opacity: 0;
+                                                top: 0;
+                                                left: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                background: transparent;
+                                                flex-direction: column;
+                                                transition: all .4s;
+                                                z-index: 9;
+                                                img{
+                                                        width: initial;
+                                                }
+                                                p{
+                                                        color: #fff;
+                                                        font-weight: 700;
+                                                        font-size: 32px;
+                                                        margin-top: 20px;
+                                                }
+                                        } 
+                                        h3{
+                                                position: absolute;
+                                                font-size: 30px;
+                                                color: #fff;
+                                                transition: all .4s;
+                                                transform: translate(15px, -15px);
+                                                margin: 0;
+                                                bottom: 0;
+                                                left: 0;
+                                                z-index: 99;
+                                                // @media screen and (max-width: 1300px){
+                                                //         font-size: 17px;
+                                                // }
+                                        }
+                                        &:hover{
+                                                transition: all .4s;
+                                                .saiba-mais{                                       
+                                                        opacity: 1;
+                                                        transition: all .4s;
+                                                        background-color: #003e9ba1;
+                                                } 
+                                                h3{
+                                                        color: rgba(255, 255, 255, 0);
+                                                        transition: all .4s;
+                                                }
+                                        }
+                                }
+                        }
+                }
+        }
+        .informativo{
+                background-image: url(../images/informativo.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                flex-direction: column;
+                text-align: center;
+                padding: 80px 0;
+                h2{
+                        color: #fff;
+                        font-weight: 500;
+                        margin: 0;
+                }
+                h3{
+                        color: #fff;
+                        margin: 50px 0;
+                        font-size: 30px;
+                }
+                a{
+                        font-size: 30px;
+                        padding: 20px 70px;
+                        color: #fff;
+                        text-decoration: none;
+                        background-color: #0174e4;
+                        transition: all .4s;
+                        &:hover{
+                                transition: all .4s;
+                                background-color: #fff;
+                                color: #0174e4;
+                        }
+                }
+        }
+        .clientes{
+                margin: 100px 0;
+                .container{
+                        h2{
+                                margin-bottom: 80px;
+                        }
+                        .swiper-container{
+                                .swiper-wrapper{
+                                        display: flex;
+                                        align-items: center;
+                                        .swiper-slide{
+                                                .box{
+                                                        display: flex;
+                                                        justify-content: center;
+                                                }
+                                        }
+                                }
+                                
+                        }
+                }
+                .swiper-btn{
+                        position: absolute;
+                        bottom: 5%;
+                        transform: translate(-10%, -10%);
+                }
+                .swiper-prev{
+                        left: 5%;
+                }
+                .swiper-next{
+                        right: 5%;
+                }
+                // @media screen and (max-width: 600px){
+                //         .container{
+                //                 h2{
+                //                         font-size: 33px;
+                //                 }
+                //                 .swiper-container{
+                //                         margin-top: 30px;
+                //                 }
+                //         }
+                // }
+        }
 }

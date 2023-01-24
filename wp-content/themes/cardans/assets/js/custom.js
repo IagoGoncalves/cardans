@@ -30,5 +30,37 @@ jQuery(document).ready(function($) {
 			delay: 5000,
 		},    
 	});
+	// Clientes
+	var swiper = new Swiper('.clientes-destaque', {
+		slidesPerView: 5,
+		spaceBetween: 30,		
+		speed: 1500,
+		loop: true,		
+		breakpoints: {
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+			},
+			768: {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			},
+			640: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			425: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			}
+		},
+		autoplay: {
+			delay: 1000,
+		},
+		navigation: {
+			nextEl: '.swiper-next',
+			prevEl: '.swiper-prev',
+		},
+	});
 	
 });

@@ -181,7 +181,6 @@ function custom_metabox() {
          ),
       )
    );
-
 }
 
 add_action( 'init', 'custom_metabox', 1 );
