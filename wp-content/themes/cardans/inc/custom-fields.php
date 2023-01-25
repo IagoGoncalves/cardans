@@ -181,6 +181,34 @@ function custom_metabox() {
          ),
       )
    );
+//Empresa
+   $post_metabox = new Odin_Metabox(
+      'principios', // Slug/ID of the Metabox (Required)
+      'Principios da empresa', // Metabox name (Required)
+      'page', // Slug of Post Type (Optional)
+      'normal', // Context (options: normal, advanced, or side) (Optional)
+      'high', // Priority (options: high, core, default or low) (Optional)
+      'page-empresa.php'
+    );
+    $post_metabox->set_fields(
+      array(        
+         array(
+            'id'          => 'missao', // Obrigatório
+            'label'       => __( 'Missão:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+         ),
+         array(
+            'id'          => 'visao', // Obrigatório
+            'label'       => __( 'Visão:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+         ),
+         array(
+            'id'          => 'valores', // Obrigatório
+            'label'       => __( 'Valores:', 'odin' ), // Obrigatório
+            'type'        => 'editor', // Obrigatório
+         ),
+      )
+    );
 }
 
 add_action( 'init', 'custom_metabox', 1 );

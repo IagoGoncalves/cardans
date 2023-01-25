@@ -29,6 +29,7 @@ body {
 }
 // Paleta de cor
 $azul-escuro: #0054a6;
+$azul-intermediario: #0060bd;
 $azul-claro: #0174e4;
 $cinza: #6a6a6a;
 // 
@@ -393,6 +394,61 @@ footer{
         //         }
         // }
 }
+.navegacao{
+        background-image: url(../images/back-breadcrump.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 50px 0;
+        h1{
+                text-align: center;
+                font-size: 70px;
+                font-weight: 500;
+                margin: 0;
+                color: #fff;
+                margin-bottom: 15px;
+        }
+        .breadcrumb{
+                background-color: transparent;
+                padding: 0px;
+                margin-bottom: 0px;
+                ul{
+                        display: flex;
+                        list-style: none;
+                        justify-content: center;
+                        align-items: baseline;
+                        padding: 0;
+                        margin: 0;
+                        li{
+                                padding-right: 5px;
+                                a{
+                                        font-weight: 400;
+                                        font-size: 40px;
+                                        color: #fff;
+                                        transition: all .3s;
+                                }
+                        }
+                        .atual{
+                                h1{
+                                        font-weight: 400;
+                                        font-size: 40px;
+                                        color: #fff;
+                                }
+                        }
+                }
+        }
+        @media only screen and (max-width: 600px){
+                padding: 40px 0;
+                h1{
+                        font-size: 32px;
+                        margin-bottom: 0;
+                }
+                .breadcrumb{
+                        .container{
+                                padding-top: 10px; 
+                        }
+                }
+        }
+}
 .home{
         @extend .col-md-12;
         padding: 0;
@@ -672,91 +728,7 @@ footer{
                                         margin: 10px 0 0 0;
                                 }
                                 &:nth-child(2){
-                                        background-color: #0060bd;
-                                }
-                        }
-                }
-                .servico{
-                        margin: 100px 0;
-                        h2{
-                                margin: 0 0 70px 0;
-                        }
-                        .margins{
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                flex-flow: wrap;
-                                .card{
-                                        @extend .col-md-3;
-                                        width: 24%;
-                                        margin-bottom: 1%;
-                                        position: relative;
-                                        padding: 0;
-                                        overflow: hidden;
-                                        transition: all .4s;
-                                        // @media screen and (max-width: 1300px){
-                                        //         width: 32%;
-                                        //         height: 180px
-                                        // }
-                                        // @media screen and (max-width: 847px){
-                                        //         width: 48%;
-                                        //         height: 180px;
-                                        // }
-                                        // @media screen and (max-width: 570px){
-                                        //         width: 100%;
-                                        //         height: 180px;
-                                        // }
-                                        img{
-                                                width: 100%;
-                                        }
-                                        .saiba-mais{
-                                                content: "";
-                                                position: absolute;
-                                                opacity: 0;
-                                                top: 0;
-                                                left: 0;
-                                                width: 100%;
-                                                height: 100%;
-                                                background: transparent;
-                                                flex-direction: column;
-                                                transition: all .4s;
-                                                z-index: 9;
-                                                img{
-                                                        width: initial;
-                                                }
-                                                p{
-                                                        color: #fff;
-                                                        font-weight: 700;
-                                                        font-size: 32px;
-                                                        margin-top: 20px;
-                                                }
-                                        } 
-                                        h3{
-                                                position: absolute;
-                                                font-size: 30px;
-                                                color: #fff;
-                                                transition: all .4s;
-                                                transform: translate(15px, -15px);
-                                                margin: 0;
-                                                bottom: 0;
-                                                left: 0;
-                                                z-index: 99;
-                                                // @media screen and (max-width: 1300px){
-                                                //         font-size: 17px;
-                                                // }
-                                        }
-                                        &:hover{
-                                                transition: all .4s;
-                                                .saiba-mais{                                       
-                                                        opacity: 1;
-                                                        transition: all .4s;
-                                                        background-color: #003e9ba1;
-                                                } 
-                                                h3{
-                                                        color: rgba(255, 255, 255, 0);
-                                                        transition: all .4s;
-                                                }
-                                        }
+                                        background-color: $azul-intermediario;
                                 }
                         }
                 }
@@ -833,5 +805,197 @@ footer{
                 //                 }
                 //         }
                 // }
+        }
+}
+.empresa{
+        @extend .col-md-12;
+        padding: 0; 
+        .container{
+                position: relative;
+                z-index: 1;
+                .sobre{
+                        margin: 90px 0 120px 0;
+                        .descritivo{
+                                display: flex;
+                                justify-content: center;
+                                align-items: flex-start;
+                                flex-direction: column;
+                                margin-left: 40px;
+                                h3{
+                                        margin: 0 0 60px 0;
+                                        color: #fff;
+                                        background-color: $azul-escuro;
+                                        font-size: 25px;
+                                        padding: 10px 10px;
+                                        width: fit-content;
+                                }
+                                h2{
+                                        margin: 0 0 50px 0;
+                                        text-align: start;
+                                        font-size: 68px;
+                                }
+                                p{
+                                        margin: 0;
+                                        font-size: 18px;
+                                }
+                        }
+                }
+                .principios{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 40px;
+                        .card{
+                                background-color: #fff;
+                                width: 390px;
+                                height: 390px;
+                                padding: 30px;
+                                box-shadow: 0px 0px 12px -5px #000;
+                                border-radius: 20px;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                flex-direction: column;
+                                h3{
+                                        font-size: 25px;
+                                        font-weight: 600;
+                                        color: $azul-escuro;
+                                        margin-bottom: 20px;
+                                }
+                                p, ul li{
+                                        font-size: 16px;
+                                        font-weight: 400;
+
+                                }
+                                ul{
+                                        padding: 0 15px;
+                                        li{
+                                                &::marker{
+                                                        color: $azul-escuro;
+                                                        font-size: 24px;
+                                                        font-weight: 200;
+                                                }
+                                        }
+                                }
+                                p{
+                                        text-align: center;
+                                }
+                        }
+                }
+        }
+        .quebra-secao{
+                background-color: $azul-intermediario;
+                padding: 120px 0;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+        }
+}
+.servico{
+        margin: 100px 0;
+        h2{
+                margin: 0 0 70px 0;
+        }
+        .margins{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-flow: wrap;
+                .card{
+                        @extend .col-md-3;
+                        width: 24%;
+                        margin-bottom: 1%;
+                        position: relative;
+                        padding: 0;
+                        overflow: hidden;
+                        transition: all .4s;
+                        // @media screen and (max-width: 1300px){
+                        //         width: 32%;
+                        //         height: 180px
+                        // }
+                        // @media screen and (max-width: 847px){
+                        //         width: 48%;
+                        //         height: 180px;
+                        // }
+                        // @media screen and (max-width: 570px){
+                        //         width: 100%;
+                        //         height: 180px;
+                        // }
+                        img{
+                                width: 100%;
+                        }
+                        .saiba-mais{
+                                content: "";
+                                position: absolute;
+                                opacity: 0;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: transparent;
+                                flex-direction: column;
+                                transition: all .4s;
+                                z-index: 9;
+                                img{
+                                        width: initial;
+                                }
+                                p{
+                                        color: #fff;
+                                        font-weight: 700;
+                                        font-size: 32px;
+                                        margin-top: 20px;
+                                }
+                        } 
+                        h3{
+                                position: absolute;
+                                font-size: 30px;
+                                color: #fff;
+                                transition: all .4s;
+                                transform: translate(15px, -15px);
+                                margin: 0;
+                                bottom: 0;
+                                left: 0;
+                                z-index: 99;
+                                // @media screen and (max-width: 1300px){
+                                //         font-size: 17px;
+                                // }
+                        }
+                        &:hover{
+                                transition: all .4s;
+                                .saiba-mais{                                       
+                                        opacity: 1;
+                                        transition: all .4s;
+                                        background-color: #003e9ba1;
+                                } 
+                                h3{
+                                        color: rgba(255, 255, 255, 0);
+                                        transition: all .4s;
+                                }
+                        }
+                }
+        }
+}
+.contato{
+        @extend .col-md-12;
+        padding: 0; 
+        .container{
+                section{
+                        margin: 80px 0 120px 0;
+                        display: flex;
+                        justify-content: space-between;
+                        .descritivo{
+                                .dados{
+                                        h3{
+                                                color: $azul-escuro;
+                                                font-size: 25px;
+                                                font-weight: 600;
+                                        }
+                                        a{
+                                                font-size: 18px;
+                                                color: $cinza;
+                                        }
+                                }
+                        }
+                }
         }
 }
