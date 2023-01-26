@@ -1,15 +1,22 @@
 <?php
 /**
- * Template Name: Servicos
+ * The template for displaying Archive pages.
  *
- * The template for displaying pages with sidebar.
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each specific one. For example, Twenty Thirteen
+ * already has tag.php for Tag archives, category.php for Category archives,
+ * and author.php for Author archives.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Odin
  * @since 2.2.0
  */
 
-get_header();
-?>
+get_header(); ?>
 	<main id="servicos" class="servicos" tabindex="-1" role="main">
 		<section class="navegacao">
 			<h1>Serviços</h1>

@@ -75,17 +75,17 @@ get_header();
 													<?php echo $whatsapp ?>
 												</a>
 											</span>
-											<span class="rede-socias align">
-												<?php if ($instagram != '') { ?> 
-													<a href="<?php echo $instagram ?>" class="instagram align" alt="instagram" title="instagram" target="_blank">
-														<img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-white.png"/>
+											<span class="rede-socias">
+												<?php if ($facebook != '') { ?> 
+													<a href="<?php echo $facebook ?>" alt="Facebook" title="Facebook" target="_blank">
+														<img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-logo-azul.png"/>
 													</a>
 												<?php } else { ?>
 													<span class="desabilitado"></span>
 												<?php } ?>
-												<?php if ($facebook != '') { ?> 
-													<a class="align" href="<?php echo $facebook ?>" alt="Facebook" title="Facebook" target="_blank">
-														<img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-logo-white.png"/>
+												<?php if ($instagram != '') { ?> 
+													<a href="<?php echo $instagram ?>" class="instagram" alt="instagram" title="instagram" target="_blank">
+														<img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-azul.png"/>
 													</a>
 												<?php } else { ?>
 													<span class="desabilitado"></span>
@@ -97,7 +97,37 @@ get_header();
 							wp_reset_postdata(); 
 						?>  
 					</aside>
-					<aside class="formulario"></aside>
+					<form class="formulario">
+						<div class="campo1">
+							<div class="texto"><?php the_content();?></div>
+						</div>
+						<div class="campos campo1">
+							<input autocomplete="off" class="input2" type="text" name="name" required>
+							<span class="focus-input2" data-placeholder="Nome"></span>
+						</div>
+
+						<div class="campos campo2">
+							<input autocomplete="off" class="input2" type="email" name="email" required>
+							<span class="focus-input2" data-placeholder="E-mail"></span>					
+						</div>
+
+						<div class="campos campo3">
+							<input autocomplete="off" class="input2" type="text" name="telefone" required>
+							<span class="focus-input2" data-placeholder="Telefone"></span>
+						</div>
+						<div class="campos campo2">
+							<input autocomplete="off" class="input2" type="text" name="assunto" required>
+							<span class="focus-input2" data-placeholder="Assunto"></span>
+						</div>
+
+						<div class="campos campo1">
+							<textarea autocomplete="off" class="input2 area" name="message"  required></textarea>
+							<span class="focus-input2" data-placeholder="Mensagem"></span>
+						</div>
+						<div class="botao-enviar">
+							<button class="btn">Enviar</button>
+						</div>
+					</form>
 				</article>
 			</section>
 		</div>
