@@ -81,14 +81,15 @@ header{
                 }       
                 .logo-menu{
                         display: flex;
+                        justify-content: space-between;
                         align-items: center;
+                        width: 100%;
                         .logo-principal{
                                 padding-left: 120px;
                         }
                         .navbar-header{
-                                // position: absolute;
-                                // right: 0;
-                                // bottom: 0;
+                                position: absolute;
+                                right: 0;
                                 transform: translate(0%, -100%);
                                 button{
                                         background-color: $azul-escuro;
@@ -132,7 +133,6 @@ header{
                                         a {
                                                 position:relative;
                                                 display: block;
-                                                // margin-left: 10px;
                                                 padding: 55px 0;
                                                 text-transform: uppercase;
                                                 color: $cinza;
@@ -199,15 +199,8 @@ header{
                                         }
                                 }
                         }    
-                        @media screen and (max-width: 770px) and (min-width: 220px) {
-                                display: block !important;
-                        }                                
-                }
-                .social{
-                        display: flex;
-                        align-items: center;
-                        div{
-                                margin-right: 100px;
+                        .social{
+                                margin: 0 0px 0 150px;
                                 a{
                                         text-decoration: none;
                                         margin-right: 20px;
@@ -225,6 +218,9 @@ header{
                                         background-color: $azul-intermediario;
                                 }
                         }
+                        @media screen and (max-width: 770px) and (min-width: 220px) {
+                                display: block !important;
+                        }                                
                 }
                 @media only screen and (max-width: 1500px){
                         .logo-menu{
@@ -247,9 +243,7 @@ header{
                                                 }
                                         }
                                 }
-                        }
-                        .social{
-                                div{
+                                .social{
                                         margin-right: 20px;
                                 }
                                 .telefone{
@@ -266,9 +260,7 @@ header{
                                                 width: 100%;
                                         }
                                 }
-                        }
-                        .social{
-                                div{
+                                .social{
                                         display: none;
                                 }
                         }
@@ -285,8 +277,6 @@ header{
                                                 }
                                         }
                                 }
-                        }
-                        .social{
                                 .telefone{
                                         font-size: 18px;
                                 }
@@ -294,11 +284,9 @@ header{
                 }
                 @media only screen and (max-width: 990px){
                         .logo-menu{
-                                justify-content: space-between;
-                        }
-                        .social{
-                                display: none;
-                                
+                                .social, .telefone{
+                                        display: none;
+                                }
                         }
                 }
                 @media only screen and (max-width: 770px){
@@ -306,6 +294,18 @@ header{
                                 .logo-principal{
                                         img{
                                                 width: 30%;
+                                        }
+                                }
+                                .navbar-collapse{
+                                        margin-top: 20px;
+                                        .navbar-nav{
+                                                padding: 15px 0px 0px 0px;
+                                                margin-left: 0px;
+                                                li{
+                                                        a{
+                                                                padding: 20px 0 !important;
+                                                        }
+                                                }
                                         }
                                 }
                         }
