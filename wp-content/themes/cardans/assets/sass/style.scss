@@ -43,9 +43,15 @@ h2{
         color: $azul-escuro;
         font-weight: 400;
         text-align: center;
+        @media only screen and (max-width: 990px){
+                font-size: 48px;
+        }
 }
 main{
         margin-top: 132px;
+        @media only screen and (max-width: 1500px){
+                margin-top: 93px;
+        }
 }
 header{
         @extend .col-md-12;
@@ -70,7 +76,8 @@ header{
                 padding: 0;
                 margin: 0 !important;
                 @media screen and (max-width: 770px) and (min-width: 220px) {
-                        display: block;
+                        padding: 24px 0;
+                        display: block !important;
                 }       
                 .logo-menu{
                         display: flex;
@@ -78,17 +85,20 @@ header{
                         .logo-principal{
                                 padding-left: 120px;
                         }
-                        .navbar-header{ // Menu mobile
-                                margin-top: -40px;
+                        .navbar-header{
+                                // position: absolute;
+                                // right: 0;
+                                // bottom: 0;
+                                transform: translate(0%, -100%);
                                 button{
-                                        background-color: #89ccff;
+                                        background-color: $azul-escuro;
                                         border: 1px solid #01244e;
                                         outline: -webkit-focus-ring-color auto 0px;
                                         @media screen and (max-width: 770px) and (min-width: 220px) {
                                                 display: block;
                                         }
                                         &:hover{
-                                                background-color: #89ccff;
+                                                background-color: $azul-escuro;
                                         }
                                 }
                                 .icon-bar{
@@ -188,7 +198,10 @@ header{
                                                 }       
                                         }
                                 }
-                        }                               
+                        }    
+                        @media screen and (max-width: 770px) and (min-width: 220px) {
+                                display: block !important;
+                        }                                
                 }
                 .social{
                         display: flex;
@@ -206,6 +219,95 @@ header{
                                 font-size: 20px;
                                 text-decoration: none;
                                 padding: 50px 70px;
+                                transition: all .4s;
+                                &:hover{
+                                        transition: all .4s;
+                                        background-color: $azul-intermediario;
+                                }
+                        }
+                }
+                @media only screen and (max-width: 1500px){
+                        .logo-menu{
+                                .logo-principal{
+                                        padding-left: 20px;
+                                        img{
+                                                width: 70%;
+                                        }
+                                }
+                                .navbar-collapse{
+                                        .navbar-nav{
+                                                margin-left: 0px;
+                                                li{
+                                                        a{
+                                                                padding: 35px 0;
+                                                        }
+                                                        &.active a{ 
+                                                                padding: 30px 0;
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                        .social{
+                                div{
+                                        margin-right: 20px;
+                                }
+                                .telefone{
+                                        padding: 31px;
+                                }
+                        }
+                }
+                @media only screen and (max-width: 1260px){
+                        .logo-menu{
+                                .logo-principal{
+                                        width: 25%;
+                                        img{
+                                                max-width: 100%;
+                                                width: 100%;
+                                        }
+                                }
+                        }
+                        .social{
+                                div{
+                                        display: none;
+                                }
+                        }
+                }
+                @media only screen and (max-width: 1200px){
+                        .logo-menu{
+                                .navbar-collapse{
+                                        .navbar-nav{
+                                                li{
+                                                        padding: 0 15px ;
+                                                        a{
+                                                                font-size: 18px;
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                        .social{
+                                .telefone{
+                                        font-size: 18px;
+                                }
+                        }
+                }
+                @media only screen and (max-width: 990px){
+                        .logo-menu{
+                                justify-content: space-between;
+                        }
+                        .social{
+                                display: none;
+                                
+                        }
+                }
+                @media only screen and (max-width: 770px){
+                        .logo-menu{
+                                .logo-principal{
+                                        img{
+                                                width: 30%;
+                                        }
+                                }
                         }
                 }
         }
@@ -226,66 +328,6 @@ header{
                         box-shadow: 0px 0px 15px -8px #000;
                 }  
         } 
-        // @media screen and (max-width: 1500px) and (min-width: 1000px) {
-        //         .menu{
-        //                 background-color: #00284d;
-        //                 .logo-principal{
-        //                         img{
-        //                                 width: 90px;
-        //                         }
-        //                 }
-        //         }
-        // }
-        // @media screen and (max-width: 1000px) and (min-width: 770px){
-        //         .menu{
-        //                 background-color: #00284d;
-        //                 .logo-principal{
-        //                         display: none;
-        //                 }
-
-        //         }
-        // }
-        // @media screen and (max-width: 772px) and (min-width: 768px) {
-        //         .main-navigation{
-        //                 .logo-principal{
-        //                         display: none;
-        //                 }
-        //         }
-        // }
-        // @media screen and (max-width: 768px) and (min-width: 220px) {
-        //         .main-navigation{
-        //                 .navbar-header{
-        //                         margin-top: -65px;
-        //                 }
-        //                 .navbar-collapse{
-        //                         margin-top: 20px;
-        //                 }
-        //         }
-        //         .menu{
-        //                 background-color: #00284d;
-        //                 .logo-principal{
-        //                         img{
-        //                                 width: 90px;
-        //                         }
-        //                 }
-
-        //         }
-        //         .menu-fixo{
-        //                 transition: all .4s;
-        //                 width: 100%;
-        //                 z-index: 999;
-        //                 background-color: #01244e;   
-        //                 .main-navigation {                      
-        //                         padding: 10px 0;
-
-        //                 }
-        //                 .logo-principal{
-        //                         img{
-        //                                 width: 75px;
-        //                         }
-        //                 }  
-        //         } 
-        // }
 }
 footer{
         @extend .col-md-12;
@@ -317,7 +359,7 @@ footer{
                         .agrupador{
                                 display: flex;
                                 justify-content: center;
-                                align-items: flex-start;
+                                align-items: center;
                                 margin-bottom: 20px;
                                 .telefone2{
                                         margin-left: 5px;
@@ -341,20 +383,23 @@ footer{
                                 margin-right: 10px;
                         }
                 }
-                // @media only screen and (max-width: 770px){
-                //         padding-top: 50px;
-                //         padding-bottom: 50px;
-                //         flex-direction: column;
-                //         .rede-socias{
-                //                 padding: 0;
-                //                 a{
-                //                         padding-left: 0px;
-                //                 }
-                //         }
-                //         .logo{
-                //                 display: none;
-                //         }
-                // }
+                @media only screen and (max-width: 990px){
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                        .logo{
+                                display: none;
+                        }
+                        .dados{
+                                width: fit-content;
+                        }
+                        .rede-socias{
+                                padding: 0;
+                                a{
+                                        padding-left: 0px;
+                                }
+                        }
+                }
+                
         }
         .copyright{
                 @extend .col-md-12;
@@ -372,6 +417,16 @@ footer{
                                 margin: 0;
                         }
                 }       
+        }
+        @media only screen and (max-width: 770px){
+                article{
+                        flex-direction: column;
+                }
+                .copyright{
+                        div{
+                                flex-direction: column;
+                        }
+                }
         }
         // @media only screen and (max-width: 600px){
         //         article{
@@ -469,6 +524,8 @@ footer{
                                         box-sizing: border-box;
                                         padding: 0px; 
                                         .padrao-banner{
+                                                width: 100%;
+                                                height: 100%;
                                                 .foto-banner{
                                                         width: 100%;
                                                         height: 100%;
@@ -481,9 +538,18 @@ footer{
                                                                 position: relative;
                                                                 width: 100%;
                                                                 height: 100%;   
-                                                                img{
-                                                                        max-width: 100%;
-                                                                }    
+                                                        }
+                                                        .foto1{
+                                                                background-image: url(../images/banner1.jpg);
+                                                        }
+                                                        .foto2{
+                                                                background-image: url(../images/banner2.jpg);
+                                                        }
+                                                        .foto3{
+                                                                background-image: url(../images/banner3.jpg);
+                                                        }
+                                                        .foto4{
+                                                                background-image: url(../images/banner4.jpg);
                                                         }
                                                 }
                                                 .descricoes{
@@ -504,12 +570,21 @@ footer{
                                                                 b{
                                                                         font-weight: 500;
                                                                 }
+                                                                @media screen and (max-width: 1660px){
+                                                                        font-size: 65px;
+                                                                }
+                                                                @media screen and (max-width: 1200px){
+                                                                        font-size: 48px;
+                                                                }
                                                         } 
                                                         h4{
                                                                 margin: 40px 0 0 0;
                                                                 text-align: end;
                                                                 font-weight: 300;
                                                                 font-size: 18px;
+                                                                @media screen and (max-width: 1200px){
+                                                                        font-size: 16px;
+                                                                }
                                                         }
                                                         // @media screen and (max-width: 600px){
                                                         //         width: 80%;
@@ -573,137 +648,11 @@ footer{
                                         background: $azul-escuro;
                                         border-bottom: 2px solid $azul-escuro;
                                 }  
+                                @media only screen and (max-width: 990px){
+                                        display: none;
+                                }
                         }
                 }
-                // @media screen and (max-width: 1880px){
-                //         .swiper-container{
-                //                 overflow: hidden;
-                //         }
-                // }
-                // @media screen and (max-width: 1500px){
-                //         height: auto;
-                //         .swiper-container{
-                //                 .navegation{
-                //                         position: absolute;
-                //                         left: 50%;
-                //                         z-index: 99;
-                //                         transform: translateX(-50%);
-                //                         .swiper-pagination{
-                //                                 left: 0;
-                //                         }
-                //                 }
-                //         }
-                // }
-                // @media screen and (max-width: 1200px){
-                //         .swiper-container{
-                //                 .swiper-wrapper{
-                //                         .swiper-slide{
-                //                                 .padrao-banner{
-                //                                         .descricoes{
-                //                                                 h2{
-                //                                                         font-size: 42px;
-                //                                                 }
-                //                                         }
-                //                                 }
-                //                                 .banner2, .banner3{
-                //                                         .descricoes{
-                //                                                 width: 100%;
-                //                                         }
-                //                                 }
-                //                         }
-                //                 }
-                //         }
-                // }
-                // @media screen and (max-width: 770px){
-                //         .swiper-container{
-                //                 .swiper-wrapper{
-                //                         .swiper-slide{
-                //                                 .padrao-banner{
-                //                                         .descricoes{
-                //                                                 h2{
-                //                                                         font-size: 28px;
-                //                                                 }
-                //                                         }
-                //                                 }
-                //                         }
-                //                 }
-                //                 .navegation{
-                //                         margin-top: -35px;
-                //                         .swiper-button-white{
-                //                                 width: 30px;
-                //                                 height: 10px;
-                //                         }
-                //                         .swiper-pagination{
-                //                                 bottom: 1px;
-                //                                 .swiper-pagination-bullet{
-                //                                         width: 25px;
-                //                                         height: 8px;
-                //                                         margin: 0 5px;
-                //                                 }
-                //                                 .swiper-button-white{
-                //                                         margin-top: -54px;
-                //                                         width: 25px;
-                //                                         height: 8px;
-                //                                 }
-                //                         }
-                //                 }
-                //         }
-                // }
-                // @media screen and (max-width: 600px){
-                //         .swiper-container{
-                //                 .swiper-wrapper{
-                //                         .swiper-slide{
-                //                                 .padrao-banner{
-                //                                         .descricoes{
-                //                                                 h2{
-                //                                                         font-size: 22px;
-                //                                                 }
-                //                                         }
-                //                                 }
-                //                                 .banner1{
-                //                                         .descricoes{
-                //                                                 width: 100%;
-                //                                         }
-                //                                 }
-                //                                 .banner2, .banner3{
-                //                                         .descricoes{
-                //                                                 h2{
-                //                                                         width: 100%;
-                //                                                 }
-                //                                         }
-                //                                 }
-                //                         }
-                //                 }
-                //         }
-                // }
-                // @media screen and (max-width: 457px){
-                //         .swiper-container{
-                //                 .swiper-wrapper{
-                //                         .swiper-slide{
-                //                                 .padrao-banner{
-                //                                         .foto-banner{
-                //                                                 .foto{
-                //                                                         img{
-                //                                                                 max-width: 120%;
-                //                                                         }
-                //                                                 }
-                //                                         }
-                //                                         .descricoes{
-                //                                                 h2{
-                //                                                         font-size: 16px;
-                //                                                 }
-                //                                         }
-                //                                 }
-                //                         }
-                //                 }
-                //                 .navegation{
-                //                         .swiper-pagination{
-                //                                 right: 0;
-                //                                 transform: translate(0%);
-                //                         }
-                //                 }
-                //         }
-                // }
         } 
         .container{
                 .card{
@@ -730,6 +679,18 @@ footer{
                                 }
                                 &:nth-child(2){
                                         background-color: $azul-intermediario;
+                                }
+                                @media only screen and (max-width: 990px){
+                                        padding: 10px;
+                                        h4{
+                                                font-size: 18px;
+                                        }
+                                        h3{
+                                                font-size: 22px;
+                                        }
+                                        img{
+                                                display: none;
+                                        }
                                 }
                         }
                 }
@@ -762,6 +723,11 @@ footer{
                                 transition: all .4s;
                                 background-color: #fff;
                                 color: #0174e4;
+                        }
+                }
+                @media only screen and (max-width: 990px){
+                        h3, a{
+                                font-size: 22px;
                         }
                 }
         }
@@ -910,18 +876,6 @@ footer{
                         padding: 0;
                         overflow: hidden;
                         transition: all .4s;
-                        // @media screen and (max-width: 1300px){
-                        //         width: 32%;
-                        //         height: 180px
-                        // }
-                        // @media screen and (max-width: 847px){
-                        //         width: 48%;
-                        //         height: 180px;
-                        // }
-                        // @media screen and (max-width: 570px){
-                        //         width: 100%;
-                        //         height: 180px;
-                        // }
                         img{
                                 width: 100%;
                         }
@@ -957,9 +911,6 @@ footer{
                                 bottom: 0;
                                 left: 0;
                                 z-index: 99;
-                                // @media screen and (max-width: 1300px){
-                                //         font-size: 17px;
-                                // }
                         }
                         &:hover{
                                 transition: all .4s;
@@ -971,6 +922,11 @@ footer{
                                 h3{
                                         color: rgba(255, 255, 255, 0);
                                         transition: all .4s;
+                                }
+                        }
+                        @media only screen and (max-width: 990px){
+                                h3{
+                                        font-size: 22px;
                                 }
                         }
                 }

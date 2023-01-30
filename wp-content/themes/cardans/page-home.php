@@ -17,8 +17,8 @@ get_header();
 					<div class="swiper-slide">
 						<div class="banner1 padrao-banner">
 							<div class="foto-banner" data-swiper-parallax="0">
-								<div class="foto">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner1.jpg"/>
+								<div class="foto foto1">
+									<!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner1.jpg"/> -->
 								</div>
 							</div>
 							<div class="descricoes">
@@ -30,8 +30,8 @@ get_header();
 					<div class="swiper-slide">
 						<div class="banner2 padrao-banner">
 							<div class="foto-banner" data-swiper-parallax="0">
-								<div class="foto">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner2.jpg"/>
+								<div class="foto foto2">
+									<!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner2.jpg"/> -->
 								</div>
 							</div>
 							<div class="descricoes">
@@ -43,7 +43,7 @@ get_header();
 					<!-- <div class="swiper-slide">
 						<div class="banner3 padrao-banner">
 							<div class="foto-banner" data-swiper-parallax="0">
-								<div class="foto">
+								<div class="foto foto3">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner3.jpg"/>
 								</div>
 							</div>
@@ -55,7 +55,7 @@ get_header();
 					<div class="swiper-slide">
 						<div class="banner3 padrao-banner">
 							<div class="foto-banner" data-swiper-parallax="0">
-								<div class="foto">
+								<div class="foto foto4">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner3.jpg"/>
 								</div>
 							</div>
