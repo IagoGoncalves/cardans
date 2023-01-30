@@ -32,17 +32,17 @@ get_header();
 				</div>
 			</section>
 			<section class="principios">
-				<div class="card">
+				<div class="card missao">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/missao.png"/>
 					<h3>Missão</h3>
 					<p><?php echo get_post_meta( $post->ID,'missao', true )?></p>
 				</div>
-				<div class="card">
+				<div class="card visao">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/visao.png"/>
 					<h3>Visão</h3>
 					<p><?php echo get_post_meta( $post->ID,'visao', true )?></p>
 				</div>
-				<div class="card">
+				<div class="card valores">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/valores.png"/>
 					<h3>Valores</h3>
 					<?php echo get_post_meta( $post->ID,'valores', true )?>
