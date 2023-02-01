@@ -3,11 +3,9 @@
 // ==========================================================================
 
 /*!
-Theme Name: Odin
-Author URI: http://wpod.in/
-Description: Odin main stylesheet.
-Author: the Odin team
-Author URI: http://wpod.in/#colaboradores
+Theme Name: Cardans
+Author URI: https://github.com/IagoGoncalves
+Description: Cardans main stylesheet.
 */
 
 @import
@@ -528,11 +526,11 @@ footer{
                                 padding-top: 10px; 
                                 ul{
                                         li{
-                                                font-size: 28px;
+                                                font-size: 22px;
                                         }
                                         .atual{
                                                 h1{
-                                                        font-size: 28px;
+                                                        font-size: 22px;
                                                 }
                                         }
                                 }
@@ -750,6 +748,15 @@ footer{
                                         }
                                 }
                         }
+                        @media only screen and (max-width: 600px){
+                                flex-direction: column;
+                                article{
+                                        height: 120px;
+                                        h4{
+                                                margin: 0;
+                                        }
+                                }
+                        }
                 }
         }
         .informativo{
@@ -786,6 +793,9 @@ footer{
                         h3, a{
                                 font-size: 22px;
                         }
+                }
+                @media only screen and (max-width: 600px){
+                        padding: 50px 0;
                 }
         }
         .clientes{
@@ -824,6 +834,9 @@ footer{
                                 bottom: 2%;
                         }   
                 }
+                @media only screen and (max-width: 600px){
+                        margin: 50px 0;
+                }
         }
 }
 .empresa{
@@ -857,6 +870,9 @@ footer{
                                         margin: 0;
                                         font-size: 18px;
                                 }
+                        }
+                        @media only screen and (max-width: 600px){
+                                margin: 50px 0;
                         }
                 }
                 .principios{
@@ -1023,6 +1039,9 @@ footer{
                         }
                 }
         }
+        @media only screen and (max-width: 600px){
+                margin: 50px 0;
+        }
 }
 .servico-interno{
         @extend .col-md-12;
@@ -1044,6 +1063,18 @@ footer{
                         padding: 0;
                         p{
                                 font-size: 18px;
+                        }
+                }
+                @media only screen and (max-width: 990px){
+                        flex-direction: column-reverse;
+                        margin-top: 50px;
+                        margin-bottom: 50px;
+                        .foto{
+                                margin-top: 20px;
+                                img{
+                                        margin: 0 auto;
+                                        width: auto
+                                }
                         }
                 }
         }
@@ -1252,6 +1283,9 @@ footer{
                                                 width: 100%;
                                         }
                                 }
+                        }
+                        @media only screen and (max-width: 600px){
+                                margin: 50px 0;
                         }
                 }
         }
