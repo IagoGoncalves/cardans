@@ -9,7 +9,7 @@
  */
 
 get_header();
-?>a
+?>
 	<main id="empresa" class="empresa" tabindex="-1" role="main">
 		<section class="navegacao">
 			<h1>Empresa</h1>
