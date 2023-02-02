@@ -25,7 +25,7 @@ get_header();
 		<div class="container">
 			<section>
 				<article class="mapa">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470420.73684689886!2d-46.83502738595864!3d-22.90739460485394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceacf427e5d39b%3A0x9eefda0a82d64039!2sCARDANS%20EXTREMA!5e0!3m2!1spt-BR!2sbr!4v1674668615485!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.38681477824!2d-46.313365470623694!3d-22.8251741928821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceacf427e5d39b%3A0x9eefda0a82d64039!2sCARDANS%20EXTREMA!5e0!3m2!1spt-BR!2sbr!4v1675346808249!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</article>
 				<article class="descritivo">
 					<aside class="dados">
@@ -112,7 +112,7 @@ get_header();
 						</div>
 
 						<div class="campos campo3">
-							<input autocomplete="off" class="input2" type="text" name="telefone" required>
+							<input autocomplete="off" class="input2" type="tel" name="telefone" required>
 							<span class="focus-input2" data-placeholder="Telefone"></span>
 						</div>
 						<div class="campos campo2">

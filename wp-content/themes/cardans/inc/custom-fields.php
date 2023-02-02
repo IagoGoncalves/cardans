@@ -205,10 +205,27 @@ function custom_metabox() {
          array(
             'id'          => 'valores', // Obrigatório
             'label'       => __( 'Valores:', 'odin' ), // Obrigatório
-            'type'        => 'editor', // Obrigatório
+            'type'        => 'text', // Obrigatório
          ),
       )
-    );
+   );
+//Dados
+   $post_metabox = new Odin_Metabox(
+      'servico-interna', // Slug/ID of the Metabox (Required)
+      'Serviço', // Metabox name (Required)
+      'servico', // Slug of Post Type (Optional)
+      'normal', // Context (options: normal, advanced, or side) (Optional)
+      'high' // Priority (options: high, core, default or low) (Optional)
+   );
+   $post_metabox->set_fields(
+      array(     
+         array(
+            'id'          => 'interna', // Obrigatório
+            'label'       => __( 'Imagem da interna', 'odin' ), // Obrigatório
+            'type'        => 'image', // Obrigatório
+         )
+      )
+   );
 }
 
 add_action( 'init', 'custom_metabox', 1 );

@@ -45,7 +45,7 @@ get_header();
 				<div class="card valores">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/valores.png"/>
 					<h3>Valores</h3>
-					<?php echo get_post_meta( $post->ID,'valores', true )?>
+					<p><?php echo get_post_meta( $post->ID,'valores', true )?></p>
 				</div>
 			</section>
 		</div>

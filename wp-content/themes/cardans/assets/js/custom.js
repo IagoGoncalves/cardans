@@ -10,6 +10,18 @@ jQuery(document).ready(function($) {
 	    }  
 	});
 
+	// Efeito de animação formulário
+		$('.input2').each(function(){
+			$(this).on('blur', function(){
+				if($(this).val().trim() != "") {
+					$(this).addClass('has-val');
+				}
+				else {
+					$(this).removeClass('has-val');
+				}
+			})    
+		})
+
 	// Swiper banner
 	var swiper = new Swiper('.banner-home', {
 		speed: 2000,

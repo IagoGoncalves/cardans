@@ -24,7 +24,9 @@ get_header(); ?>
 		</section>
 		<section class="container interna">
 			<article class="foto">
-				<?php echo odin_thumbnail( 526, 519, false, true);?>
+				<?php 
+					$foto = get_post_meta( $post->ID,'interna', true );	?>				
+					<img src="<?php echo odin_get_image_url( $foto, 526, 375, true, true);?>" >
 			</article>
 			<article class="texto">
 				<?php the_content(); ?>
