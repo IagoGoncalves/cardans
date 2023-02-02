@@ -44,11 +44,14 @@ h2{
         @media only screen and (max-width: 990px){
                 font-size: 48px;
         }
+        @media only screen and (max-width: 600px){
+                font-size: 42px;
+        }
 }
 main{
-        margin-top: 132px;
+        margin-top: 113px;
         @media only screen and (max-width: 1500px){
-                margin-top: 93px;
+                margin-top: 95px;
         }
 }
 header{
@@ -127,7 +130,7 @@ header{
                                         a {
                                                 position:relative;
                                                 display: block;
-                                                padding: 55px 0;
+                                                padding: 45px 0;
                                                 text-transform: uppercase;
                                                 color: $cinza;
                                                 font-weight: 500;
@@ -162,18 +165,12 @@ header{
                                                 }                                               
                                         }
                                         &.active a { 
-                                                padding: 50px 0;
+                                                padding: 40px 0;
                                                 background-color: transparent;
                                                 color: $azul-escuro;
                                                 position: relative;
                                                 font-weight: 600;
                                                 border-bottom: 5px solid $azul-claro;
-                                                // @media screen and (max-width: 430px) and (min-width: 220px) {
-                                                //        border-bottom: 0px solid $azul-claro;
-                                                //        padding: 0px;
-                                                //        color: #addbff;
-                                                // }
-                                                
                                                 &:before{
                                                         transition: all .3s;
                                                         content: ''; //obrigatorio
@@ -205,7 +202,7 @@ header{
                                 color: #fff;
                                 font-size: 20px;
                                 text-decoration: none;
-                                padding: 50px 70px;
+                                padding: 40px 70px;
                                 transition: all .4s;
                                 &:hover{
                                         transition: all .4s;
@@ -382,6 +379,16 @@ footer{
                                 align-items: flex-start;
                                 display: flex;
                         }
+                        @media only screen and (max-width: 600px){
+                                a{
+                                        font-size: 16px;
+                                }
+                                .agrupador{
+                                        img{
+                                                width: 30px;
+                                        }
+                                }
+                        }
 
                 }
                 .rede-socias{
@@ -432,26 +439,6 @@ footer{
                         }
                 }
         }
-        // @media only screen and (max-width: 600px){
-        //         article{
-        //                 .dados{
-        //                         .telefones{
-        //                                 a{
-        //                                         font-size: 16px;
-        //                                 }
-        //                         }
-        //                 }
-        //                 .rede-socias{
-        //                         justify-content: flex-start;
-        //                         padding: 0 15px;
-        //                 }
-        //         }
-        //         .copyright{
-        //                 p{
-        //                         font-size: 10px;
-        //                 }
-        //         }
-        // }
 }
 .navegacao{
         background-image: url(../images/back-breadcrump.jpg);
@@ -465,6 +452,9 @@ footer{
                 margin: 0;
                 color: #fff;
                 margin-bottom: 15px;
+                @media only screen and (max-width: 770px){
+                        font-size: 38px;
+                }
         }
         .breadcrumb{
                 background-color: transparent;
@@ -625,6 +615,12 @@ footer{
                                 }
                                 @media screen and (max-width: 770px){
                                         bottom: 20%;
+                                        .swiper-button-prev{
+                                                background-image: url(../images/seta-esquerda-branca-mobile.png);
+                                        }
+                                        .swiper-button-next{
+                                                background-image: url(../images/seta-direita-branca-mobile.png);
+                                        }
                                 }
                         }
                         .swiper-pagination{
@@ -711,6 +707,7 @@ footer{
                                 flex-direction: column;
                                 article{
                                         height: 120px;
+                                        width: 100%;
                                         h4{
                                                 margin: 0;
                                         }
@@ -757,6 +754,16 @@ footer{
                 }
                 @media only screen and (max-width: 600px){
                         padding: 50px 0;
+                        h2{
+                                font-size: 28px;
+                        }
+                        h3{
+                                font-size: 16px;
+                        }
+                        a{
+                                font-size: 16px;
+                                padding: 10px 45px;
+                        }
                 }
         }
         .clientes{
@@ -797,6 +804,11 @@ footer{
                 }
                 @media only screen and (max-width: 600px){
                         margin: 50px 0;
+                        .swiper-btn{
+                                img{
+                                        width: 50px;
+                                }
+                        }
                 }
         }
 }
@@ -1008,11 +1020,19 @@ footer{
                                 h3{
                                         font-size: 22px;
                                 }
+                                .saiba-mais{
+                                        display: none;
+                                }
                         }
                 }
         }
-        @media only screen and (max-width: 600px){
+        @media only screen and (max-width: 770px){
                 margin: 50px 0;
+                .margins{
+                        .card{
+                                width: 49%;
+                        }
+                }
         }
 }
 .servico-interno{
@@ -1028,6 +1048,7 @@ footer{
                         padding: 0;
                         img{
                                 width: 100%;
+                                max-width: 100%
                         }
                 }
                 .texto{
@@ -1043,9 +1064,12 @@ footer{
                         margin-bottom: 50px;
                         .foto{
                                 margin-top: 20px;
-                                img{
-                                        margin: 0 auto;
-                                        width: auto
+                        }
+                }
+                @media only screen and (max-width: 770px){
+                        .texto{
+                                p{
+                                        font-size: 16px;
                                 }
                         }
                 }
@@ -1261,8 +1285,18 @@ footer{
                                         }
                                 }
                         }
-                        @media only screen and (max-width: 600px){
+                        @media only screen and (max-width: 770px){
                                 margin: 50px 0;
+                                .descritivo{
+                                        .dados{
+                                                h3{
+                                                        font-size: 22px;
+                                                }
+                                                a{
+                                                        font-size: 16px;
+                                                }
+                                        }
+                                }
                         }
                 }
         }
