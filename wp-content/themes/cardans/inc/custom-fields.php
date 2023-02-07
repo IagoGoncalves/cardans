@@ -130,16 +130,6 @@ function custom_metabox() {
          )
       ),
       array(
-         'id'          => 'telefone2', // Obrigatório
-         'label'       => __( 'Telefone2:', 'odin' ), // Obrigatório
-         'type'        => 'text', // Obrigatório
-         'default'     => '', // Opcional (deve ser o id de uma imagem em mídias, separe os ids com virtula)
-         'description' => __( 'Digite o numero com DDD ex.:(xx) xxxx-xxxx', 'odin' ),
-         'attributes'  => array( // Optional (html input elements)
-            'type' => 'tel'
-         )
-      ),
-      array(
          'id'          => 'whatsapp', // Obrigatório
          'label'       => __( 'WhatsApp :', 'odin' ), // Obrigatório
          'type'        => 'text', // Obrigatório
@@ -209,7 +199,7 @@ function custom_metabox() {
          ),
       )
    );
-//Dados
+//Servico
    $post_metabox = new Odin_Metabox(
       'servico-interna', // Slug/ID of the Metabox (Required)
       'Serviço', // Metabox name (Required)

@@ -359,8 +359,8 @@ require_once get_template_directory() . '/inc/custom-fields.php';
 //-------------------------
 
 //Ajax enviar formulario
-// require_once('class.phpmailer.php');
-// require_once get_template_directory() . '/inc/ajax.php';
+require_once('class.phpmailer.php');
+require_once get_template_directory() . '/inc/ajax.php';
 
 
 function excerpt($limit) {

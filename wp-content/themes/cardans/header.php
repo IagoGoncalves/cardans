@@ -55,8 +55,7 @@
 								while($var->have_posts()):
 									$var->the_post(); ?>
 										<?php 
-											$telefone =  get_post_meta( $post->ID,'telefone', true );
-											$telefone =  get_post_meta( $post->ID,'telefone2', true );
+											$whatsapp =  get_post_meta( $post->ID,'whatsapp', true );
 											$facebook =  get_post_meta( $post->ID,'facebook', true );
 											$instagram =  get_post_meta( $post->ID,'instagram', true );
 											$email =  get_post_meta( $post->ID,'email1', true );
@@ -72,9 +71,9 @@
 												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/o-email.png"/>
 											</a>
 										</div>
-										<a class="telefone" href="tel:<?php echo $telefone ?>" alt="tel: <?php echo $telefone ?>" title="tel: <?php echo $telefone ?>" target="_blank">    
+										<a class="whatsapp" href="https://api.whatsapp.com/send?phone=55<?php echo $whatsapp ?>&text=Olá, vim pelo site da Cardans" alt="<?php echo $whatsapp ?>" title="<?php echo $whatsapp ?>1" target="_blank">
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call.png"/>
-											<?php echo $telefone ?>
+											<?php echo $whatsapp ?>
 										</a>
 									<?php
 								endwhile;

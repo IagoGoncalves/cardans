@@ -20,7 +20,7 @@ Description: Cardans main stylesheet.
 body {
         font-family: 'Roboto', sans-serif;       
 }
-@media (min-width: 1500px){
+@media (min-width: 1700px){
         .container {
             width: 1380px;
         }
@@ -197,7 +197,7 @@ header{
                                         margin-right: 20px;
                                 }
                         }
-                        .telefone{
+                        .whatsapp{
                                 background-color: $azul-escuro;
                                 color: #fff;
                                 font-size: 20px;
@@ -213,7 +213,14 @@ header{
                                 display: block !important;
                         }                                
                 }
-                @media only screen and (max-width: 1500px){
+                @media only screen and (max-width: 1700px){
+                        .logo-menu{
+                                .social{
+                                        margin: 0 0px 0 20px;
+                                }
+                        }
+                }
+                @media only screen and (max-width: 1550px){
                         .logo-menu{
                                 .logo-principal{
                                         padding-left: 20px;
@@ -237,8 +244,15 @@ header{
                                 .social{
                                         margin-right: 20px;
                                 }
-                                .telefone{
+                                .whatsapp{
                                         padding: 31px;
+                                }
+                        }
+                }
+                @media only screen and (max-width: 1410px){
+                        .logo-menu{
+                                .social{
+                                        margin: 0 0px 0 20px;
                                 }
                         }
                 }
@@ -268,14 +282,14 @@ header{
                                                 }
                                         }
                                 }
-                                .telefone{
+                                .whatsapp{
                                         font-size: 18px;
                                 }
                         }
                 }
                 @media only screen and (max-width: 990px){
                         .logo-menu{
-                                .social, .telefone{
+                                .social, .whatsapp{
                                         display: none;
                                 }
                         }
@@ -768,6 +782,7 @@ footer{
         }
         .clientes{
                 margin: 100px 0;
+                display: none;
                 .container{
                         h2{
                                 margin-bottom: 80px;
@@ -1249,6 +1264,9 @@ footer{
                                                         margin-left: 0px;
                                                         margin-bottom: 15px;
                                                 }
+                                        }
+                                        .load{
+                                                display: none;
                                         }
                                         .botao-enviar{
                                                 @extend .col-md-12, .col-sm-12, .col-xs-12;

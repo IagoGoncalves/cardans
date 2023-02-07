@@ -24,7 +24,6 @@
 								$var->the_post(); ?>
 									<?php 
 										$telefone =  get_post_meta( $post->ID,'telefone', true );
-										$telefone2 =  get_post_meta( $post->ID,'telefone2', true );
 										$whatsapp =  get_post_meta( $post->ID,'whatsapp', true );
 										$logradouro =  get_post_meta( $post->ID,'logradouro', true );
 										$endereco =  get_post_meta( $post->ID,'endereco', true );
@@ -52,15 +51,7 @@
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call.png"/>
 											<?php if ($telefone != '') { ?> 
 												<a class="telefone" href="tel:<?php echo $telefone ?>" alt="tel: <?php echo $telefone ?>" title="tel: <?php echo $telefone ?>" target="_blank">    
-													<?php echo $telefone ?> | 
-												</a>
-											<?php } else { ?>
-												<span class="desabilitado"></span>
-											<?php } ?>
-
-											<?php if ($telefone2 != '') { ?> 
-												<a class="telefone2" href="tel:<?php echo $telefone2 ?>" alt="tel: <?php echo $telefone2 ?>" title="tel: <?php echo $telefone2 ?>" target="_blank">    
-													<?php echo $telefone2 ?>
+													<?php echo $telefone ?>  
 												</a>
 											<?php } else { ?>
 												<span class="desabilitado"></span>

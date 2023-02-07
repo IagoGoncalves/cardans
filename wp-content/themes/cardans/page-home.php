@@ -40,30 +40,6 @@ get_header();
 							</div>		
 						</div>	
 					</div>	
-					<!-- <div class="swiper-slide">
-						<div class="banner3 padrao-banner">
-							<div class="foto-banner" data-swiper-parallax="0">
-								<div class="foto foto3">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner3.jpg"/>
-								</div>
-							</div>
-							<div class="descricoes">
-								<h2 data-swiper-parallax="2300">Blocos e artefatos de cimento</h2>
-							</div>		
-						</div>	
-					</div>	
-					<div class="swiper-slide">
-						<div class="banner3 padrao-banner">
-							<div class="foto-banner" data-swiper-parallax="0">
-								<div class="foto foto4">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner3.jpg"/>
-								</div>
-							</div>
-							<div class="descricoes">
-								<h2 data-swiper-parallax="2300">Blocos e artefatos de cimento</h2>
-							</div>		
-						</div>	
-					</div> -->
 				</div>
 				<div class="navegation align">
 					<div class="swiper-button-prev swiper-button-white"></div>

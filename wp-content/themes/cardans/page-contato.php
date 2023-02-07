@@ -37,7 +37,6 @@ get_header();
 										$var->the_post(); ?>
 											<?php 
 												$telefone =  get_post_meta( $post->ID,'telefone', true );
-												$telefone2 =  get_post_meta( $post->ID,'telefone2', true );
 												$email =  get_post_meta( $post->ID,'email', true );
 												$whatsapp =  get_post_meta( $post->ID,'whatsapp', true );
 												$logradouro =  get_post_meta( $post->ID,'logradouro', true );
@@ -63,10 +62,7 @@ get_header();
 											<span class="telefone">
 												<h3>Telefones:</h3>
 												<a class="telefone" href="tel:<?php echo $telefone ?>" alt="tel: <?php echo $telefone ?>" title="tel: <?php echo $telefone ?>" target="_blank">    
-													<?php echo $telefone ?> | 
-												</a>
-												<a class="telefone2" href="tel:<?php echo $telefone2 ?>" alt="tel: <?php echo $telefone2 ?>" title="tel: <?php echo $telefone2 ?>" target="_blank">    
-													<?php echo $telefone2 ?>
+													<?php echo $telefone ?> 
 												</a>
 											</span>
 											<span class="whatsapp">
@@ -97,10 +93,9 @@ get_header();
 							wp_reset_postdata(); 
 						?>  
 					</aside>
-					<form class="formulario">
-						<div class="campo1">
-							<div class="texto"><?php the_content();?></div>
-						</div>
+					<form class="contact2-form formulario" id="contato" name="enviar-email" method="post">
+						<input class="tipo-email" type="hidden" name="tipo-email" value="contato">	
+						
 						<div class="campos campo1">
 							<input autocomplete="off" class="input2" type="text" name="name" required>
 							<span class="focus-input2" data-placeholder="Nome"></span>
@@ -124,8 +119,26 @@ get_header();
 							<textarea autocomplete="off" class="input2 area" name="message"  required></textarea>
 							<span class="focus-input2" data-placeholder="Mensagem"></span>
 						</div>
+
+						<!-- Recaptcha -->
+						<div class="g-recaptcha_align campo4">
+							<div class="g-recaptcha" data-sitekey="6LevSF4kAAAAABCnvBWXBUC5H64UrR1iiSN-zca9"></div>
+						</div>	
+						<script>
+							window.onload = function() {
+							var recaptcha = document.forms["contato"]["g-recaptcha-response"];
+							recaptcha.required = true;
+							recaptcha.oninvalid = function(e) {
+								// fazer algo, no caso to dando um alert
+								alert("Por favor Click no reCaptcha para validar o Formulario.");
+								}
+							}
+						</script>		
+						<div class="valida-envio" style="display:none;"></div>
+							<svg width='50px' height='50px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-default load"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(0 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(30 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.08333333333333333s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(60 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.16666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(90 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.25s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(120 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.3333333333333333s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(150 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.4166666666666667s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(180 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(210 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5833333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(240 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.6666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(270 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.75s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(300 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.8333333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#082559' transform='rotate(330 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.9166666666666666s' repeatCount='indefinite'/></rect>
+							</svg>
 						<div class="botao-enviar">
-							<button class="btn">Enviar</button>
+							<button class="btn" value="submit">Enviar</button>
 						</div>
 					</form>
 				</article>
