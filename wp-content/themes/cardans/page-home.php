@@ -66,10 +66,11 @@ get_header();
 										$estado =  get_post_meta( $post->ID,'estado', true );
 										$complemento =  get_post_meta( $post->ID,'complemento', true );
 									?>
-									<article class="align">
+									<article class="align horario">
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock-banner-white.png"/>
-										<h4>Lorem Ipsum dolor sit</h4>
-										<h3>8h00 - 18h00</h3>
+										<h3>Lorem Ipsum dolor sit</h3>
+										<h4>Segunda a sexta 8h00 - 17h00</h4>
+										<h4>Sábado 8h00 - 12h00</h4>
 									</article>
 									<article class="align">
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/telephone-banner-white.png"/>

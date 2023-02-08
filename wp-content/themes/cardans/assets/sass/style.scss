@@ -717,6 +717,11 @@ footer{
                                         }
                                 }
                         }
+                        .horario{
+                                h4{
+                                        margin: 5px 0 0 0;
+                                }
+                        }
                         @media only screen and (max-width: 600px){
                                 flex-direction: column;
                                 article{
