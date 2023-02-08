@@ -17,6 +17,7 @@ form.addEventListener('submit', function(ev) {
 			oOutput.innerHTML = oReq.response;
 			document.querySelector(".load").style.display = 'none';
 			document.querySelector(".botao-enviar").style.display = 'none';
+			document.querySelector(".valida-envio").style.display = 'block';
 		} else {
 			oOutput.innerHTML = "Error " + oReq.status + " occurred when trying to upload your file.<br \/>";
 		}
