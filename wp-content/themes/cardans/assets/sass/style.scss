@@ -8,1319 +8,1329 @@ Author URI: https://github.com/IagoGoncalves
 Description: Cardans main stylesheet.
 */
 
-@import
-        "variables",           // Theme       Custom Variables
-        "bootstrap/bootstrap", // Bootstrap   Styles Core
-        "wordpress/wordpress", // WordPress   Styles Core
-        //"woocommerce",       // WooCommerce Styles Core
-        "odin/core",           // Odin        Styles Core
-        "layout",              // Theme       Custom Layout
-        url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')
-;
+@import "variables",
+	// Theme       Custom Variables
+	"bootstrap/bootstrap",
+	// Bootstrap   Styles Core
+	"wordpress/wordpress",
+	// WordPress   Styles Core
+	//"woocommerce",       // WooCommerce Styles Core
+	"odin/core",
+	// Odin        Styles Core
+	"layout",
+	// Theme       Custom Layout
+	url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 body {
-        font-family: 'Roboto', sans-serif;       
+	font-family: "Roboto", sans-serif;
 }
-@media (min-width: 1700px){
-        .container {
-            width: 1380px;
-        }
+@media (min-width: 1700px) {
+	.container {
+		width: 1380px;
+	}
 }
 // Paleta de cor
 $azul-escuro: #0054a6;
 $azul-intermediario: #0060bd;
 $azul-claro: #0174e4;
 $cinza: #6a6a6a;
-// 
-.align{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+//
+.align {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-h2{
-        font-size: 70px;
-        color: $azul-escuro;
-        font-weight: 400;
-        text-align: center;
-        @media only screen and (max-width: 990px){
-                font-size: 48px;
-        }
-        @media only screen and (max-width: 600px){
-                font-size: 42px;
-        }
+h2 {
+	font-size: 70px;
+	color: $azul-escuro;
+	font-weight: 400;
+	text-align: center;
+	@media only screen and (max-width: 990px) {
+		font-size: 48px;
+	}
+	@media only screen and (max-width: 600px) {
+		font-size: 42px;
+	}
 }
-main{
-        margin-top: 113px;
-        @media only screen and (max-width: 1500px){
-                margin-top: 95px;
-        }
+main {
+	margin-top: 113px;
+	@media only screen and (max-width: 1500px) {
+		margin-top: 95px;
+	}
 }
-header{
-        @extend .col-md-12;
-        min-height: 0px;
-        padding: 0;
-        .container:before, .container:after {
-            content: " ";
-            display: none;
-        }
-        .navbar:before, .navbar:after {
-           content: " ";
-           display: none;
-        }
-        .main-navigation {
-                background: transparent;
-                background-color: transparent;
-                border: none;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                transition: all .4s;
-                padding: 0;
-                margin: 0 !important;     
-                .logo-menu{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        width: 100%;
-                        .logo-principal{
-                                padding-left: 120px;
-                        }
-                        .navbar-header{
-                                position: absolute;
-                                right: 0;
-                                transform: translate(0%, -100%);
-                                button{
-                                        background-color: $azul-escuro;
-                                        border: 1px solid #01244e;
-                                        outline: -webkit-focus-ring-color auto 0px;
-                                        @media screen and (max-width: 770px) and (min-width: 220px) {
-                                                display: block;
-                                        }
-                                        &:hover{
-                                                background-color: $azul-escuro;
-                                        }
-                                }
-                                .icon-bar{
-                                        background-color: #fff;
-                                }
-                        }
-                        .navbar-nav {
-                                float: none;
-                                display: flex;
-                                justify-content: center;
-                                align-items: flex-end;
-                                transition: all .4s;
-                                margin-left: 120px;
-                                @media screen and (max-width: 770px) and (min-width: 220px) {
-                                        display: block;
-                                        background: transparent;
-                                        margin: 0 -15px;
-                                        height: inherit;
-                                        transition: all .4s;
-                                        padding: 15px 0px;
-                                }                        
-                                li {
-                                        padding: 0 20px;
-                                        float: none;
-                                        display: inline-block;  
-                                        @media screen and (max-width: 770px) and (min-width: 220px) {
-                                                width: 100%;
-                                                margin-top: 5px;
-                                                padding: 0 0px;
-                                        }       
-                                        a {
-                                                position:relative;
-                                                display: block;
-                                                padding: 45px 0;
-                                                text-transform: uppercase;
-                                                color: $cinza;
-                                                font-weight: 500;
-                                                font-size: 20px;
-                                                background: transparent;
-                                                transition: all 0.3s;
-                                                @media screen and (max-width: 430px) and (min-width: 220px) {
-                                                        padding: 5px 0;
-                                                        margin-top: 5px;
-                                                        font-size: 20px;
-                                                        margin-left: 0px;
-                                                }
-                                                &:before{
-                                                        transition: all .3s;
-                                                        content: ''; //obrigatorio
-                                                        background: #fff;
-                                                        height: 2px;
-                                                        width: 0%;
-                                                        position: absolute;
-                                                        bottom: -5px;
-                                                        left: 0px;
-                                                }
-                                                &:hover {  
-                                                        transition: all 0.3s;
-                                                        color: $azul-claro;
-                                                }
-                                                &:focus {
-                                                outline: 0px auto -webkit-focus-ring-color; 
-                                                outline-offset: 0px; 
-                                                color: $azul-claro;
-                                                background-color: transparent;
-                                                }                                               
-                                        }
-                                        &.active a { 
-                                                padding: 40px 0;
-                                                background-color: transparent;
-                                                color: $azul-escuro;
-                                                position: relative;
-                                                font-weight: 600;
-                                                border-bottom: 5px solid $azul-claro;
-                                                &:before{
-                                                        transition: all .3s;
-                                                        content: ''; //obrigatorio
-                                                        background: $azul-claro;
-                                                        height: 2px;
-                                                        width: 0%;
-                                                        position: absolute;
-                                                        bottom: -5px;
-                                                        left: 0px;
-                                                } 
-                                                &:focus {
-                                                        outline: 0px auto -webkit-focus-ring-color; 
-                                                        outline-offset: 0px; 
-                                                        color: $azul-escuro;
-                                                        background-color: transparent;
-                                                }       
-                                        }
-                                }
-                        }    
-                        .social{
-                                margin: 0 0px 0 150px;
-                                a{
-                                        text-decoration: none;
-                                        margin-right: 20px;
-                                }
-                        }
-                        .whatsapp{
-                                background-color: $azul-escuro;
-                                color: #fff;
-                                font-size: 20px;
-                                text-decoration: none;
-                                padding: 40px 70px;
-                                transition: all .4s;
-                                &:hover{
-                                        transition: all .4s;
-                                        background-color: $azul-intermediario;
-                                }
-                        }
-                        @media screen and (max-width: 770px) and (min-width: 220px) {
-                                display: block !important;
-                        }                                
-                }
-                @media only screen and (max-width: 1700px){
-                        .logo-menu{
-                                .social{
-                                        margin: 0 0px 0 20px;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 1550px){
-                        .logo-menu{
-                                .logo-principal{
-                                        padding-left: 20px;
-                                        img{
-                                                width: 70%;
-                                        }
-                                }
-                                .navbar-collapse{
-                                        .navbar-nav{
-                                                margin-left: 0px;
-                                                li{
-                                                        a{
-                                                                padding: 35px 0;
-                                                        }
-                                                        &.active a{ 
-                                                                padding: 30px 0;
-                                                        }
-                                                }
-                                        }
-                                }
-                                .social{
-                                        margin-right: 20px;
-                                }
-                                .whatsapp{
-                                        padding: 31px;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 1410px){
-                        .logo-menu{
-                                .social{
-                                        margin: 0 0px 0 20px;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 1260px){
-                        .logo-menu{
-                                .logo-principal{
-                                        width: 25%;
-                                        img{
-                                                max-width: 100%;
-                                                width: 100%;
-                                        }
-                                }
-                                .social{
-                                        display: none;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 1200px){
-                        .logo-menu{
-                                .navbar-collapse{
-                                        .navbar-nav{
-                                                li{
-                                                        padding: 0 15px ;
-                                                        a{
-                                                                font-size: 18px;
-                                                        }
-                                                }
-                                        }
-                                }
-                                .whatsapp{
-                                        font-size: 18px;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 990px){
-                        .logo-menu{
-                                .social, .whatsapp{
-                                        display: none;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 770px){
-                        padding: 24px 0;
-                        display: block !important;
-                        .logo-menu{
-                                .logo-principal{
-                                        img{
-                                                width: 30%;
-                                        }
-                                }
-                                .navbar-collapse{
-                                        margin-top: 20px;
-                                        .navbar-nav{
-                                                padding: 15px 0px 0px 0px;
-                                                margin-left: 0px;
-                                                li{
-                                                        a{
-                                                                padding: 20px 0 !important;
-                                                        }
-                                                }
-                                        }
-                                }
-                        }
-                }
-                @media only screen and (max-width: 550px){
-                        .logo-menu{
-                                .logo-principal{
-                                        img{
-                                                width: 35%;
-                                        }
-                                }
-                                
-                        }
-                }
-        }
-        .menu{
-                position: fixed;
-                top: 0;
-                background-color: #fff;
-                width: 100%;
-                z-index: 999;
-                transition: all .4s; 
-        }
-        .menu-fixo{
-                width: 100%;
-                padding: 0;
-                transition: all .4s;
-                z-index: 999;
-                .main-navigation {                      
-                        box-shadow: 0px 0px 15px -8px #000;
-                }  
-        } 
+header {
+	@extend .col-md-12;
+	min-height: 0px;
+	padding: 0;
+	.container:before,
+	.container:after {
+		content: " ";
+		display: none;
+	}
+	.navbar:before,
+	.navbar:after {
+		content: " ";
+		display: none;
+	}
+	.main-navigation {
+		background: transparent;
+		background-color: transparent;
+		border: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: all 0.4s;
+		padding: 0;
+		margin: 0 !important;
+		.logo-menu {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			.logo-principal {
+				padding-left: 120px;
+			}
+			.navbar-header {
+				position: absolute;
+				right: 0;
+				transform: translate(0%, -100%);
+				button {
+					background-color: $azul-escuro;
+					border: 1px solid #01244e;
+					outline: -webkit-focus-ring-color auto 0px;
+					@media screen and (max-width: 770px) and (min-width: 220px) {
+						display: block;
+					}
+					&:hover {
+						background-color: $azul-escuro;
+					}
+				}
+				.icon-bar {
+					background-color: #fff;
+				}
+			}
+			.navbar-nav {
+				float: none;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				transition: all 0.4s;
+				margin-left: 120px;
+				@media screen and (max-width: 770px) and (min-width: 220px) {
+					display: block;
+					background: transparent;
+					margin: 0 -15px;
+					height: inherit;
+					transition: all 0.4s;
+					padding: 15px 0px;
+				}
+				li {
+					padding: 0 20px;
+					float: none;
+					display: inline-block;
+					@media screen and (max-width: 770px) and (min-width: 220px) {
+						width: 100%;
+						margin-top: 5px;
+						padding: 0 0px;
+					}
+					a {
+						position: relative;
+						display: block;
+						padding: 45px 0;
+						text-transform: uppercase;
+						color: $cinza;
+						font-weight: 500;
+						font-size: 20px;
+						background: transparent;
+						transition: all 0.3s;
+						@media screen and (max-width: 430px) and (min-width: 220px) {
+							padding: 5px 0;
+							margin-top: 5px;
+							font-size: 20px;
+							margin-left: 0px;
+						}
+						&:before {
+							transition: all 0.3s;
+							content: ""; //obrigatorio
+							background: #fff;
+							height: 2px;
+							width: 0%;
+							position: absolute;
+							bottom: -5px;
+							left: 0px;
+						}
+						&:hover {
+							transition: all 0.3s;
+							color: $azul-claro;
+						}
+						&:focus {
+							outline: 0px auto -webkit-focus-ring-color;
+							outline-offset: 0px;
+							color: $azul-claro;
+							background-color: transparent;
+						}
+					}
+					&.active a {
+						padding: 40px 0;
+						background-color: transparent;
+						color: $azul-escuro;
+						position: relative;
+						font-weight: 600;
+						border-bottom: 5px solid $azul-claro;
+						&:before {
+							transition: all 0.3s;
+							content: ""; //obrigatorio
+							background: $azul-claro;
+							height: 2px;
+							width: 0%;
+							position: absolute;
+							bottom: -5px;
+							left: 0px;
+						}
+						&:focus {
+							outline: 0px auto -webkit-focus-ring-color;
+							outline-offset: 0px;
+							color: $azul-escuro;
+							background-color: transparent;
+						}
+					}
+				}
+			}
+			.social {
+				margin: 0 0px 0 150px;
+				a {
+					text-decoration: none;
+					margin-right: 20px;
+				}
+			}
+			.whatsapp {
+				background-color: $azul-escuro;
+				color: #fff;
+				font-size: 20px;
+				text-decoration: none;
+				padding: 40px 70px;
+				transition: all 0.4s;
+				&:hover {
+					transition: all 0.4s;
+					background-color: $azul-intermediario;
+				}
+			}
+			@media screen and (max-width: 770px) and (min-width: 220px) {
+				display: block !important;
+			}
+		}
+		@media only screen and (max-width: 1700px) {
+			.logo-menu {
+				.social {
+					margin: 0 0px 0 20px;
+				}
+			}
+		}
+		@media only screen and (max-width: 1550px) {
+			.logo-menu {
+				.logo-principal {
+					padding-left: 20px;
+					img {
+						width: 70%;
+					}
+				}
+				.navbar-collapse {
+					.navbar-nav {
+						margin-left: 0px;
+						li {
+							a {
+								padding: 35px 0;
+							}
+							&.active a {
+								padding: 30px 0;
+							}
+						}
+					}
+				}
+				.social {
+					margin-right: 20px;
+				}
+				.whatsapp {
+					padding: 31px;
+				}
+			}
+		}
+		@media only screen and (max-width: 1410px) {
+			.logo-menu {
+				.social {
+					margin: 0 0px 0 20px;
+				}
+			}
+		}
+		@media only screen and (max-width: 1260px) {
+			.logo-menu {
+				.logo-principal {
+					width: 25%;
+					img {
+						max-width: 100%;
+						width: 100%;
+					}
+				}
+				.social {
+					display: none;
+				}
+			}
+		}
+		@media only screen and (max-width: 1200px) {
+			.logo-menu {
+				.navbar-collapse {
+					.navbar-nav {
+						li {
+							padding: 0 15px;
+							a {
+								font-size: 18px;
+							}
+						}
+					}
+				}
+				.whatsapp {
+					font-size: 18px;
+				}
+			}
+		}
+		@media only screen and (max-width: 990px) {
+			.logo-menu {
+				.social,
+				.whatsapp {
+					display: none;
+				}
+			}
+		}
+		@media only screen and (max-width: 770px) {
+			padding: 24px 0;
+			display: block !important;
+			.logo-menu {
+				.logo-principal {
+					img {
+						width: 30%;
+					}
+				}
+				.navbar-collapse {
+					margin-top: 20px;
+					.navbar-nav {
+						padding: 15px 0px 0px 0px;
+						margin-left: 0px;
+						li {
+							a {
+								padding: 20px 0 !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		@media only screen and (max-width: 550px) {
+			.logo-menu {
+				.logo-principal {
+					img {
+						width: 35%;
+					}
+				}
+			}
+		}
+	}
+	.menu {
+		position: fixed;
+		top: 0;
+		background-color: #fff;
+		width: 100%;
+		z-index: 999;
+		transition: all 0.4s;
+	}
+	.menu-fixo {
+		width: 100%;
+		padding: 0;
+		transition: all 0.4s;
+		z-index: 999;
+		.main-navigation {
+			box-shadow: 0px 0px 15px -8px #000;
+		}
+	}
 }
-footer{
-        @extend .col-md-12;
-        background: $azul-escuro;
-        padding: 0;
-        article{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 80px 0;
-                .logo{
-                        width: 100%;
-                }
-                .dados{
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-direction: column; 
-                        a{
-                                color: #fff;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                transition: .3s all;
-                                margin-left: 20px;
-                                font-size: 18px;
-                        } 
-                        .agrupador{
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                margin-bottom: 20px;
-                                .telefone2{
-                                        margin-left: 5px;
-                                }
-                        }
-                        .whatsapp{
-                                padding: 10px 0;
-                                color: #fff;
-                                svg{
-                                        margin-right: 15px;
-                                }
-                        }
-                        .loc{
-                                align-items: flex-start;
-                                display: flex;
-                        }
-                        @media only screen and (max-width: 600px){
-                                a{
-                                        font-size: 16px;
-                                }
-                                .agrupador{
-                                        img{
-                                                width: 30px;
-                                        }
-                                }
-                        }
+footer {
+	@extend .col-md-12;
+	background: $azul-escuro;
+	padding: 0;
+	article {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 80px 0;
+		.logo {
+			width: 100%;
+		}
+		.dados {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: column;
+			a {
+				color: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: 0.3s all;
+				margin-left: 20px;
+				font-size: 18px;
+			}
+			.agrupador {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 20px;
+				.telefone2 {
+					margin-left: 5px;
+				}
+			}
+			.whatsapp {
+				padding: 10px 0;
+				color: #fff;
+				svg {
+					margin-right: 15px;
+				}
+			}
+			.loc {
+				align-items: flex-start;
+				display: flex;
+			}
+			@media only screen and (max-width: 600px) {
+				a {
+					font-size: 16px;
+				}
+				.agrupador {
+					img {
+						width: 30px;
+					}
+				}
+			}
+		}
+		.rede-socias {
+			.instagram {
+				margin-right: 10px;
+			}
+		}
+		@media only screen and (max-width: 990px) {
+			padding-top: 50px;
+			padding-bottom: 50px;
+			.logo {
+				display: none;
+			}
+			.dados {
+				width: fit-content;
+			}
+			.rede-socias {
+				padding: 0;
+				a {
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+	.copyright {
+		@extend .col-md-12;
+		padding: 0;
+		background: $azul-escuro;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 1px solid white;
+		padding: 10px 0;
+		p {
+			font-size: 14px;
+			color: #fff;
+			margin: 0;
+		}
+	}
+	@media only screen and (max-width: 770px) {
+		article {
+			flex-direction: column;
+		}
+		.copyright {
+			div {
+				flex-direction: column;
+			}
+		}
+	}
+}
+.navegacao {
+	background-image: url(../images/back-breadcrump.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 50px 0;
+	h1 {
+		text-align: center;
+		font-size: 50px;
+		font-weight: 500;
+		margin: 0;
+		color: #fff;
+		margin-bottom: 15px;
+		@media only screen and (max-width: 770px) {
+			font-size: 38px;
+		}
+	}
+	.breadcrumb {
+		background-color: transparent;
+		padding: 0px;
+		margin-bottom: 0px;
+		ul {
+			display: flex;
+			list-style: none;
+			justify-content: center;
+			align-items: baseline;
+			padding: 0;
+			margin: 0;
+			li {
+				padding-right: 5px;
+				font-weight: 400;
+				font-size: 18px;
+				color: #fff;
+				a {
+					color: #fff;
+					transition: all 0.3s;
+				}
+			}
+			.atual {
+				h1 {
+					font-weight: 400;
+					font-size: 18px;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+.home {
+	@extend .col-md-12;
+	padding: 0;
+	.banner {
+		height: 86vh;
+		position: relative;
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+			background: $azul-escuro;
+			position: relative;
+			.swiper-wrapper {
+				.swiper-slide {
+					font-size: 18px;
+					color: #fff;
+					-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+					padding: 0px;
+					.padrao-banner {
+						width: 100%;
+						height: 100%;
+						.foto-banner {
+							width: 100%;
+							height: 100%;
+							overflow: hidden;
+							position: relative;
+							.foto {
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: cover;
+								position: relative;
+								width: 100%;
+								height: 100%;
+							}
+							.foto1 {
+								background-image: url(../images/banner1.jpg);
+							}
+							.foto2 {
+								background-image: url(../images/banner2.jpg);
+							}
+							.foto3 {
+								background-image: url(../images/banner3.jpg);
+							}
+							.foto4 {
+								background-image: url(../images/banner4.jpg);
+							}
+						}
+						.descricoes {
+							position: absolute;
+							z-index: 999;
+							top: 50%;
+							left: 7%;
+							transform: translateY(-50%);
+							width: 35%;
+							h2 {
+								margin: 0;
+								font-size: 90px;
+								color: #fff;
+								font-weight: 200;
+								padding: 0;
+								text-transform: uppercase;
+								text-align: end;
+								b {
+									font-weight: 500;
+								}
+								@media screen and (max-width: 1660px) {
+									font-size: 65px;
+								}
+								@media screen and (max-width: 1200px) {
+									font-size: 48px;
+								}
+							}
+							h4 {
+								margin: 40px 0 0 0;
+								text-align: end;
+								font-weight: 300;
+								font-size: 18px;
+								@media screen and (max-width: 1200px) {
+									font-size: 16px;
+								}
+							}
+							@media screen and (max-width: 990px) {
+								width: 80%;
+								max-width: 100%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+								h2,
+								h4 {
+									text-align: center;
+								}
+							}
+							@media screen and (max-width: 770px) {
+								top: 40%;
+							}
+							@media screen and (max-width: 600px) {
+								h2 {
+									padding: 0;
+									font-size: 32px;
+								}
+							}
+						}
+					}
+				}
+				.swiper-slide-active {
+					opacity: 1 !important;
+				}
+			}
+			.navegation {
+				position: absolute;
+				z-index: 9;
+				bottom: 10%;
+				left: 20%;
+				transform: translate(-10%, -10%);
+				.swiper-button-white {
+					position: relative;
+					width: 100px;
+					height: 40px;
+					margin: 0 10px;
+				}
+				.swiper-button-prev {
+					background-image: url(../images/seta-esquerda-branca.png);
+					background-size: auto;
+				}
+				.swiper-button-next {
+					background-image: url(../images/seta-direita-branca.png);
+					background-size: auto;
+				}
+				@media screen and (max-width: 770px) {
+					bottom: 20%;
+					.swiper-button-prev {
+						background-image: url(../images/seta-esquerda-branca-mobile.png);
+					}
+					.swiper-button-next {
+						background-image: url(../images/seta-direita-branca-mobile.png);
+					}
+				}
+			}
+			.swiper-pagination {
+				position: absolute;
+				width: max-content;
+				bottom: 10%;
+				left: auto;
+				right: 20%;
+				transform: translate(-10%, -10%);
+				.swiper-pagination-bullet {
+					width: 20px;
+					height: 20px;
+					text-align: center;
+					line-height: 20px;
+					opacity: 1;
+					background: #fff;
+					border-radius: 0;
+					margin: 0 12px;
+					&:focus {
+						outline: -webkit-focus-ring-color auto 0px;
+					}
+				}
+				.swiper-pagination-bullet-active {
+					color: $azul-escuro;
+					background: $azul-escuro;
+					border-bottom: 2px solid $azul-escuro;
+				}
+				@media only screen and (max-width: 990px) {
+					display: none;
+				}
+			}
+		}
+		@media only screen and (max-width: 990px) {
+			height: 75vh;
+			.swiper-container {
+				.navegation {
+					bottom: 15%;
+					left: 50%;
+					transform: translate(-50%, -20%);
+				}
+			}
+		}
+	}
+	.container {
+		.card {
+			position: relative;
+			top: -30px;
+			z-index: 1;
+			article {
+				flex-direction: column;
+				background-color: $azul-escuro;
+				width: 100%;
+				width: 450px;
+				height: 190px;
+				text-align: center;
+				h4 {
+					font-size: 20px;
+					color: #fff;
+					margin: 25px 0 0 0;
+					font-weight: 300;
+				}
+				h3 {
+					font-size: 25px;
+					color: #fff;
+					margin: 10px 0 0 0;
+				}
+				&:nth-child(2) {
+					background-color: $azul-intermediario;
+				}
+				@media only screen and (max-width: 990px) {
+					padding: 10px;
+					h4 {
+						font-size: 18px;
+					}
+					h3 {
+						font-size: 22px;
+					}
+					img {
+						display: none;
+					}
+				}
+			}
+			.horario {
+				h4 {
+					margin: 5px 0 0 0;
+				}
+			}
+			@media only screen and (max-width: 600px) {
+				flex-direction: column;
+				article {
+					height: 120px;
+					width: 100%;
+					h4 {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+	.informativo {
+		background-image: url(../images/informativo.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: top;
+		flex-direction: column;
+		text-align: center;
+		padding: 80px 0;
+		h2 {
+			color: #fff;
+			font-weight: 500;
+			margin: 0;
+		}
+		h3 {
+			color: #fff;
+			margin: 50px 0;
+			font-size: 30px;
+		}
+		a {
+			font-size: 30px;
+			padding: 20px 70px;
+			color: #fff;
+			text-decoration: none;
+			background-color: #0174e4;
+			transition: all 0.4s;
+			&:hover {
+				transition: all 0.4s;
+				background-color: #fff;
+				color: #0174e4;
+			}
+		}
+		@media only screen and (max-width: 990px) {
+			h3,
+			a {
+				font-size: 22px;
+			}
+		}
+		@media only screen and (max-width: 600px) {
+			padding: 50px 0;
+			h2 {
+				font-size: 28px;
+			}
+			h3 {
+				font-size: 16px;
+			}
+			a {
+				font-size: 16px;
+				padding: 10px 45px;
+			}
+		}
+	}
+	.clientes {
+		margin: 100px 0;
+		display: none;
+		.container {
+			h2 {
+				margin-bottom: 80px;
+			}
+			.swiper-container {
+				.swiper-wrapper {
+					display: flex;
+					align-items: center;
+					.swiper-slide {
+						.box {
+							display: flex;
+							justify-content: center;
+						}
+					}
+				}
+			}
+		}
+		.swiper-btn {
+			position: absolute;
+			bottom: 5%;
+			transform: translate(-10%, -10%);
+		}
+		.swiper-prev {
+			left: 5%;
+		}
+		.swiper-next {
+			right: 5%;
+		}
+		@media only screen and (max-width: 990px) {
+			.swiper-btn {
+				bottom: 2%;
+			}
+		}
+		@media only screen and (max-width: 600px) {
+			margin: 50px 0;
+			.swiper-btn {
+				img {
+					width: 50px;
+				}
+			}
+		}
+	}
+}
+.empresa {
+	@extend .col-md-12;
+	padding: 0;
+	.container {
+		position: relative;
+		z-index: 1;
+		.sobre {
+			margin: 100px 0;
+			.descritivo {
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				flex-direction: column;
+				margin-left: 40px;
+				h3 {
+					margin: 0 0 60px 0;
+					color: #fff;
+					background-color: $azul-escuro;
+					font-size: 25px;
+					padding: 10px 10px;
+					width: fit-content;
+				}
+				h2 {
+					margin: 0 0 50px 0;
+					text-align: start;
+					font-size: 65px;
+				}
+				p {
+					margin: 0;
+					font-size: 18px;
+				}
+			}
+			@media only screen and (max-width: 600px) {
+				margin: 50px 0;
+			}
+		}
+		.principios {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 40px;
+			.card {
+				background-color: #fff;
+				width: 390px;
+				height: 390px;
+				padding: 30px;
+				box-shadow: 0px 0px 12px -5px #000;
+				border-radius: 20px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				flex-direction: column;
+				h3 {
+					font-size: 28px;
+					font-weight: 600;
+					color: $azul-escuro;
+					margin-bottom: 20px;
+				}
+				p {
+					font-size: 16px;
+					font-weight: 400;
+					text-align: center;
+				}
+				@media only screen and (max-width: 1500px) {
+					width: 320px;
+					padding: 20px;
+				}
+			}
+		}
+		@media only screen and (max-width: 1200px) {
+			.sobre {
+				flex-flow: wrap-reverse;
+				.descritivo {
+					margin-left: 0px;
+					h3,
+					h2,
+					p {
+						margin: 0 0 20px 0;
+					}
+				}
+			}
+			.principios {
+				flex-flow: wrap;
+				.missao,
+				.visao {
+					width: 49%;
+					height: 250px;
+				}
+				.valores {
+					margin-top: 20px;
+					width: 100%;
+					height: 250px;
+				}
+			}
+		}
+		@media only screen and (max-width: 990px) {
+			.sobre {
+				.descritivo {
+					h2 {
+						font-size: 48px;
+					}
+				}
+			}
+			.principios {
+				.missao,
+				.visao,
+				.valores {
+					height: 300px;
+				}
+			}
+		}
+		@media only screen and (max-width: 770px) {
+			.sobre {
+				.descritivo {
+					h2 {
+						font-size: 38px;
+					}
+				}
+			}
+			.principios {
+				.missao,
+				.visao,
+				.valores {
+					width: 100%;
+					height: auto;
+					img {
+						width: 48px;
+					}
+				}
+				.visao {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+	.quebra-secao {
+		background-color: $azul-intermediario;
+		padding: 120px 0;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+}
+.servico {
+	margin: 100px 0;
+	h2 {
+		margin: 0 0 70px 0;
+	}
+	.margins {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-flow: wrap;
+		.card {
+			@extend .col-md-3;
+			width: 24%;
+			margin-bottom: 1%;
+			position: relative;
+			padding: 0;
+			overflow: hidden;
+			transition: all 0.4s;
+			img {
+				width: 100%;
+			}
+			.saiba-mais {
+				content: "";
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: transparent;
+				flex-direction: column;
+				transition: all 0.4s;
+				z-index: 9;
+				img {
+					width: initial;
+				}
+				p {
+					color: #fff;
+					font-weight: 700;
+					font-size: 32px;
+					margin-top: 20px;
+				}
+			}
+			h3 {
+				position: absolute;
+				font-size: 30px;
+				color: #fff;
+				transition: all 0.4s;
+				transform: translate(15px, -15px);
+				margin: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 99;
+			}
+			&:hover {
+				transition: all 0.4s;
+				.saiba-mais {
+					opacity: 1;
+					transition: all 0.4s;
+					background-color: #003e9ba1;
+				}
+				h3 {
+					color: rgba(255, 255, 255, 0);
+					transition: all 0.4s;
+				}
+			}
+			@media only screen and (max-width: 990px) {
+				h3 {
+					font-size: 22px;
+				}
+				.saiba-mais {
+					display: none;
+				}
+			}
+		}
+	}
+	@media only screen and (max-width: 770px) {
+		margin: 50px 0;
+		.margins {
+			.card {
+				width: 49%;
+			}
+		}
+	}
+}
+.servico-interno {
+	@extend .col-md-12;
+	padding: 0;
+	.interna {
+		margin-top: 100px;
+		margin-bottom: 100px;
+		display: flex;
+		justify-content: space-between;
+		.foto {
+			@extend .col-md-5, .col-sm-12, .col-xs-12;
+			padding: 0;
+			img {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+		.texto {
+			@extend .col-md-5, .col-sm-12, .col-xs-12;
+			padding: 0;
+			p {
+				font-size: 18px;
+			}
+		}
+		@media only screen and (max-width: 990px) {
+			flex-direction: column-reverse;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			.foto {
+				margin-top: 20px;
+			}
+		}
+		@media only screen and (max-width: 770px) {
+			.texto {
+				p {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}
+.contato {
+	@extend .col-md-12;
+	padding: 0;
+	.container {
+		section {
+			margin: 80px 0 120px 0;
+			display: flex;
+			justify-content: space-between;
+			.mapa {
+				iframe {
+					height: 100%;
+				}
+			}
+			.descritivo {
+				@extend .col-md-6, .col-sm-12, .col-xs-12;
+				padding: 0;
+				.dados {
+					padding: 0;
+					h3 {
+						color: $azul-escuro;
+						font-size: 25px;
+						font-weight: 600;
+					}
+					a {
+						font-size: 18px;
+						color: $cinza;
+					}
+					.endereco {
+						h3 {
+							margin-top: 0;
+						}
+					}
+					.rede-socias {
+						margin: 30px 0 20px 0;
+						display: flex;
+						justify-content: flex-start;
+						align-items: center;
+						.instagram {
+							margin-left: 10px;
+						}
+					}
+				}
+				.formulario {
+					input {
+						outline: none;
+						border: none;
+					}
+					textarea {
+						outline: none;
+						border: none;
+						resize: none;
+					}
+					textarea:focus,
+					input:focus {
+						border-color: transparent !important;
+					}
+					.campos {
+						position: relative;
+						margin-bottom: 15px;
+					}
+					.input2 {
+						display: block;
+						padding-left: 10px;
+						width: 100%;
+						font-size: 15px;
+						color: #8a8989;
+						line-height: 1.2;
+						font-weight: normal;
+					}
+					.focus-input2 {
+						position: absolute;
+						display: block;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						pointer-events: none;
+					}
+					.focus-input2::before {
+						content: "";
+						display: block;
+						position: absolute;
+						bottom: 0px;
+						left: 0;
+						width: 100%;
+						border: 1px solid #8a8989;
+						// background-color: #eaeaea;
+						border-radius: 0px;
+						height: 45px;
+						-webkit-transition: all 0.4s;
+						-o-transition: all 0.4s;
+						-moz-transition: all 0.4s;
+						transition: all 0.4s;
+					}
+					.focus-input2::after {
+						content: attr(data-placeholder);
+						display: block;
+						width: 100%;
+						position: absolute;
+						top: 0px;
+						left: 10px;
+						font-size: 18px;
+						color: $azul-escuro;
+						line-height: 1.2;
+						-webkit-transition: all 0.4s;
+						-o-transition: all 0.4s;
+						-moz-transition: all 0.4s;
+						transition: all 0.4s;
+					}
+					/*---------------------------------------------*/
+					input.input2 {
+						height: 55px;
+					}
+					input.input2 + .focus-input2::after {
+						top: 23px;
+						left: 10px;
+					}
+					textarea.input2 {
+						min-height: 129px;
+						padding-top: 13px;
+						padding-bottom: 13px;
+					}
+					textarea.input2 + .focus-input2::before {
+						height: 120px;
+					}
 
-                }
-                .rede-socias{
-                        .instagram{
-                                margin-right: 10px;
-                        }
-                }
-                @media only screen and (max-width: 990px){
-                        padding-top: 50px;
-                        padding-bottom: 50px;
-                        .logo{
-                                display: none;
-                        }
-                        .dados{
-                                width: fit-content;
-                        }
-                        .rede-socias{
-                                padding: 0;
-                                a{
-                                        padding-left: 0px;
-                                }
-                        }
-                }
-                
-        }
-        .copyright{
-                @extend .col-md-12;
-                padding: 0;
-                background: $azul-escuro;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                border-top: 1px solid white;    
-                padding: 10px 0;
-                p{
-                        font-size: 14px;
-                        color: #fff;
-                        margin: 0;
-                }
-        }
-        @media only screen and (max-width: 770px){
-                article{
-                        flex-direction: column;
-                }
-                .copyright{
-                        div{
-                                flex-direction: column;
-                        }
-                }
-        }
-}
-.navegacao{
-        background-image: url(../images/back-breadcrump.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        padding: 50px 0;
-        h1{
-                text-align: center;
-                font-size: 50px;
-                font-weight: 500;
-                margin: 0;
-                color: #fff;
-                margin-bottom: 15px;
-                @media only screen and (max-width: 770px){
-                        font-size: 38px;
-                }
-        }
-        .breadcrumb{
-                background-color: transparent;
-                padding: 0px;
-                margin-bottom: 0px;
-                ul{
-                        display: flex;
-                        list-style: none;
-                        justify-content: center;
-                        align-items: baseline;
-                        padding: 0;
-                        margin: 0;
-                        li{
-                                padding-right: 5px;
-                                font-weight: 400;
-                                font-size: 18px;
-                                color: #fff;
-                                a{
-                                        color: #fff;
-                                        transition: all .3s;
-                                }
-                        }
-                        .atual{
-                                h1{
-                                        font-weight: 400;
-                                        font-size: 18px;
-                                        color: #fff;
-                                }
-                        }
-                }
-        }
-}
-.home{
-        @extend .col-md-12;
-        padding: 0;
-        .banner{
-                height: 86vh;
-                position: relative;
-                .swiper-container {
-                        width: 100%;
-                        height: 100%;
-                        background: $azul-escuro;
-                        position: relative;
-                        .swiper-wrapper{
-                                .swiper-slide {
-                                        font-size: 18px;
-                                        color: #fff;
-                                        -webkit-box-sizing: border-box;
-                                        box-sizing: border-box;
-                                        padding: 0px; 
-                                        .padrao-banner{
-                                                width: 100%;
-                                                height: 100%;
-                                                .foto-banner{
-                                                        width: 100%;
-                                                        height: 100%;
-                                                        overflow: hidden;
-                                                        position:relative;                              
-                                                        .foto{
-                                                                background-repeat: no-repeat;
-                                                                background-position: center;
-                                                                background-size: cover;
-                                                                position: relative;
-                                                                width: 100%;
-                                                                height: 100%;   
-                                                        }
-                                                        .foto1{
-                                                                background-image: url(../images/banner1.jpg);
-                                                        }
-                                                        .foto2{
-                                                                background-image: url(../images/banner2.jpg);
-                                                        }
-                                                        .foto3{
-                                                                background-image: url(../images/banner3.jpg);
-                                                        }
-                                                        .foto4{
-                                                                background-image: url(../images/banner4.jpg);
-                                                        }
-                                                }
-                                                .descricoes{
-                                                        position: absolute;
-                                                        z-index: 999;
-                                                        top: 50%;
-                                                        left: 7%;
-                                                        transform: translateY(-50%); 
-                                                        width: 35%;
-                                                        h2{
-                                                                margin: 0;
-                                                                font-size: 90px;
-                                                                color: #fff;
-                                                                font-weight: 200;
-                                                                padding: 0;
-                                                                text-transform: uppercase;
-                                                                text-align: end;
-                                                                b{
-                                                                        font-weight: 500;
-                                                                }
-                                                                @media screen and (max-width: 1660px){
-                                                                        font-size: 65px;
-                                                                }
-                                                                @media screen and (max-width: 1200px){
-                                                                        font-size: 48px;
-                                                                }
-                                                        } 
-                                                        h4{
-                                                                margin: 40px 0 0 0;
-                                                                text-align: end;
-                                                                font-weight: 300;
-                                                                font-size: 18px;
-                                                                @media screen and (max-width: 1200px){
-                                                                        font-size: 16px;
-                                                                }
-                                                        }
-                                                        @media screen and (max-width: 990px){
-                                                                width: 80%;
-                                                                max-width: 100%;
-                                                                left: 50%;
-                                                                transform: translate(-50%, -50%); 
-                                                                h2, h4{
-                                                                        text-align: center;
-                                                                }
-                                                        } 
-                                                        @media screen and (max-width: 770px){
-                                                                top: 40%;
-                                                        }
-                                                        @media screen and (max-width: 600px){
-                                                                h2{
-                                                                        padding: 0;
-                                                                        font-size: 32px;
-                                                                }
-                                                        }                        
-                                                }   
-                                        }
-                                }
-                                .swiper-slide-active{
-                                        opacity: 1 !important;
-                                }
-                        }
-                        .navegation{
-                                position: absolute;
-                                z-index: 9;
-                                bottom: 10%;
-                                left: 20%;
-                                transform: translate(-10%, -10%);
-                                .swiper-button-white{
-                                        position: relative;
-                                        width: 100px;
-                                        height: 40px;
-                                        margin: 0 10px;
-                                }
-                                .swiper-button-prev{
-                                        background-image: url(../images/seta-esquerda-branca.png);
-                                        background-size: auto;
-                                }
-                                .swiper-button-next{
-                                        background-image: url(../images/seta-direita-branca.png);
-                                        background-size: auto;
-                                }
-                                @media screen and (max-width: 770px){
-                                        bottom: 20%;
-                                        .swiper-button-prev{
-                                                background-image: url(../images/seta-esquerda-branca-mobile.png);
-                                        }
-                                        .swiper-button-next{
-                                                background-image: url(../images/seta-direita-branca-mobile.png);
-                                        }
-                                }
-                        }
-                        .swiper-pagination{
-                                position: absolute;
-                                width: max-content;
-                                bottom: 10%;
-                                left: auto;
-                                right: 20%;
-                                transform: translate(-10%, -10%);
-                                .swiper-pagination-bullet {
-                                        width: 20px;
-                                        height: 20px;
-                                        text-align: center;
-                                        line-height: 20px;
-                                        opacity: 1;
-                                        background: #fff;
-                                        border-radius: 0;       
-                                        margin: 0 12px;             
-                                        &:focus {
-                                                outline: -webkit-focus-ring-color auto 0px;
-                                        }
-                                }
-                                .swiper-pagination-bullet-active {
-                                        color: $azul-escuro;
-                                        background: $azul-escuro;
-                                        border-bottom: 2px solid $azul-escuro;
-                                }  
-                                @media only screen and (max-width: 990px){
-                                        display: none;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 990px){
-                        height: 75vh;
-                        .swiper-container{
-                                .navegation{
-                                        bottom: 15%;
-                                        left: 50%;
-                                        transform: translate(-50%, -20%);
-                                }
-                        }
-                }
-        } 
-        .container{
-                .card{
-                        position: relative;
-                        top: -30px;
-                        z-index: 1;
-                        article{
-                                flex-direction: column;
-                                background-color: $azul-escuro;
-                                width: 100%;
-                                width: 450px;
-                                height: 190px;
-                                text-align: center;
-                                h4{
-                                        font-size: 20px;
-                                        color: #fff;
-                                        margin: 25px 0 0 0;
-                                        font-weight: 300;
-                                }
-                                h3{
-                                        font-size: 25px;
-                                        color: #fff;
-                                        margin: 10px 0 0 0;
-                                }
-                                &:nth-child(2){
-                                        background-color: $azul-intermediario;
-                                }
-                                @media only screen and (max-width: 990px){
-                                        padding: 10px;
-                                        h4{
-                                                font-size: 18px;
-                                        }
-                                        h3{
-                                                font-size: 22px;
-                                        }
-                                        img{
-                                                display: none;
-                                        }
-                                }
-                        }
-                        .horario{
-                                h4{
-                                        margin: 5px 0 0 0;
-                                }
-                        }
-                        @media only screen and (max-width: 600px){
-                                flex-direction: column;
-                                article{
-                                        height: 120px;
-                                        width: 100%;
-                                        h4{
-                                                margin: 0;
-                                        }
-                                }
-                        }
-                }
-        }
-        .informativo{
-                background-image: url(../images/informativo.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: top;
-                flex-direction: column;
-                text-align: center;
-                padding: 80px 0;
-                h2{
-                        color: #fff;
-                        font-weight: 500;
-                        margin: 0;
-                }
-                h3{
-                        color: #fff;
-                        margin: 50px 0;
-                        font-size: 30px;
-                }
-                a{
-                        font-size: 30px;
-                        padding: 20px 70px;
-                        color: #fff;
-                        text-decoration: none;
-                        background-color: #0174e4;
-                        transition: all .4s;
-                        &:hover{
-                                transition: all .4s;
-                                background-color: #fff;
-                                color: #0174e4;
-                        }
-                }
-                @media only screen and (max-width: 990px){
-                        h3, a{
-                                font-size: 22px;
-                        }
-                }
-                @media only screen and (max-width: 600px){
-                        padding: 50px 0;
-                        h2{
-                                font-size: 28px;
-                        }
-                        h3{
-                                font-size: 16px;
-                        }
-                        a{
-                                font-size: 16px;
-                                padding: 10px 45px;
-                        }
-                }
-        }
-        .clientes{
-                margin: 100px 0;
-                display: none;
-                .container{
-                        h2{
-                                margin-bottom: 80px;
-                        }
-                        .swiper-container{
-                                .swiper-wrapper{
-                                        display: flex;
-                                        align-items: center;
-                                        .swiper-slide{
-                                                .box{
-                                                        display: flex;
-                                                        justify-content: center;
-                                                }
-                                        }
-                                }
-                                
-                        }
-                }
-                .swiper-btn{
-                        position: absolute;
-                        bottom: 5%;
-                        transform: translate(-10%, -10%);
-                }
-                .swiper-prev{
-                        left: 5%;
-                }
-                .swiper-next{
-                        right: 5%;
-                }
-                @media only screen and (max-width: 990px){
-                        .swiper-btn{
-                                bottom: 2%;
-                        }   
-                }
-                @media only screen and (max-width: 600px){
-                        margin: 50px 0;
-                        .swiper-btn{
-                                img{
-                                        width: 50px;
-                                }
-                        }
-                }
-        }
-}
-.empresa{
-        @extend .col-md-12;
-        padding: 0; 
-        .container{
-                position: relative;
-                z-index: 1;
-                .sobre{
-                        margin: 100px 0;
-                        .descritivo{
-                                display: flex;
-                                justify-content: center;
-                                align-items: flex-start;
-                                flex-direction: column;
-                                margin-left: 40px;
-                                h3{
-                                        margin: 0 0 60px 0;
-                                        color: #fff;
-                                        background-color: $azul-escuro;
-                                        font-size: 25px;
-                                        padding: 10px 10px;
-                                        width: fit-content;
-                                }
-                                h2{
-                                        margin: 0 0 50px 0;
-                                        text-align: start;
-                                        font-size: 65px;
-                                }
-                                p{
-                                        margin: 0;
-                                        font-size: 18px;
-                                }
-                        }
-                        @media only screen and (max-width: 600px){
-                                margin: 50px 0;
-                        }
-                }
-                .principios{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 40px;
-                        .card{
-                                background-color: #fff;
-                                width: 390px;
-                                height: 390px;
-                                padding: 30px;
-                                box-shadow: 0px 0px 12px -5px #000;
-                                border-radius: 20px;
-                                display: flex;
-                                justify-content: flex-start;
-                                align-items: center;
-                                flex-direction: column;
-                                h3{
-                                        font-size: 28px;
-                                        font-weight: 600;
-                                        color: $azul-escuro;
-                                        margin-bottom: 20px;
-                                }
-                                p{
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        text-align: center;
-                                }
-                                @media only screen and (max-width: 1500px){
-                                        width: 320px;
-                                        padding: 20px;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 1200px){
-                        .sobre{
-                                flex-flow: wrap-reverse;
-                                .descritivo{
-                                        margin-left: 0px;
-                                        h3, h2, p{
-                                                margin: 0 0 20px 0;
-                                        }
-                                }
-                        }
-                        .principios{
-                                flex-flow: wrap;
-                                .missao, .visao{
-                                        width: 49%;
-                                        height: 250px;
-                                }
-                                .valores{
-                                        margin-top: 20px;
-                                        width: 100%;
-                                        height: 250px;
-                                }
-                        }
-                }
-                @media only screen and (max-width: 990px){
-                        .sobre{
-                                .descritivo{
-                                        h2{
-                                                font-size: 48px;
-                                        }
-                                }
-                        }
-                        .principios{
-                                .missao, .visao, .valores{
-                                        height: 300px;
-                                }
-                                
-                        }
-                }
-                @media only screen and (max-width: 770px){
-                        .sobre{
-                                .descritivo{
-                                        h2{
-                                                font-size: 38px;
-                                        }
-                                }
-                        }
-                        .principios{
-                                .missao, .visao, .valores{
-                                        width: 100%;
-                                        height: auto;
-                                        img{
-                                                width: 48px;
-                                        }
-                                }
-                                .visao{
-                                        margin-top: 20px;
-                                }
-                                
-                        }
-                }
-        }
-        .quebra-secao{
-                background-color: $azul-intermediario;
-                padding: 120px 0;
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-        }
-}
-.servico{
-        margin: 100px 0;
-        h2{
-                margin: 0 0 70px 0;
-        }
-        .margins{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-flow: wrap;
-                .card{
-                        @extend .col-md-3;
-                        width: 24%;
-                        margin-bottom: 1%;
-                        position: relative;
-                        padding: 0;
-                        overflow: hidden;
-                        transition: all .4s;
-                        img{
-                                width: 100%;
-                        }
-                        .saiba-mais{
-                                content: "";
-                                position: absolute;
-                                opacity: 0;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                background: transparent;
-                                flex-direction: column;
-                                transition: all .4s;
-                                z-index: 9;
-                                img{
-                                        width: initial;
-                                }
-                                p{
-                                        color: #fff;
-                                        font-weight: 700;
-                                        font-size: 32px;
-                                        margin-top: 20px;
-                                }
-                        } 
-                        h3{
-                                position: absolute;
-                                font-size: 30px;
-                                color: #fff;
-                                transition: all .4s;
-                                transform: translate(15px, -15px);
-                                margin: 0;
-                                bottom: 0;
-                                left: 0;
-                                z-index: 99;
-                        }
-                        &:hover{
-                                transition: all .4s;
-                                .saiba-mais{                                       
-                                        opacity: 1;
-                                        transition: all .4s;
-                                        background-color: #003e9ba1;
-                                } 
-                                h3{
-                                        color: rgba(255, 255, 255, 0);
-                                        transition: all .4s;
-                                }
-                        }
-                        @media only screen and (max-width: 990px){
-                                h3{
-                                        font-size: 22px;
-                                }
-                                .saiba-mais{
-                                        display: none;
-                                }
-                        }
-                }
-        }
-        @media only screen and (max-width: 770px){
-                margin: 50px 0;
-                .margins{
-                        .card{
-                                width: 49%;
-                        }
-                }
-        }
-}
-.servico-interno{
-        @extend .col-md-12;
-        padding: 0;
-        .interna{
-                margin-top: 100px;
-                margin-bottom: 100px;
-                display: flex;
-                justify-content: space-between;
-                .foto{
-                        @extend .col-md-5, .col-sm-12, .col-xs-12;   
-                        padding: 0;
-                        img{
-                                width: 100%;
-                                max-width: 100%
-                        }
-                }
-                .texto{
-                        @extend .col-md-5, .col-sm-12, .col-xs-12;   
-                        padding: 0;
-                        p{
-                                font-size: 18px;
-                        }
-                }
-                @media only screen and (max-width: 990px){
-                        flex-direction: column-reverse;
-                        margin-top: 50px;
-                        margin-bottom: 50px;
-                        .foto{
-                                margin-top: 20px;
-                        }
-                }
-                @media only screen and (max-width: 770px){
-                        .texto{
-                                p{
-                                        font-size: 16px;
-                                }
-                        }
-                }
-        }
-}
-.contato{
-        @extend .col-md-12;
-        padding: 0; 
-        .container{
-                section{
-                        margin: 80px 0 120px 0;
-                        display: flex;
-                        justify-content: space-between;
-                        .mapa{
-                                iframe{
-                                        height: 100%;
-                                }
-                        }
-                        .descritivo{
-                                @extend .col-md-6, .col-sm-12, .col-xs-12;
-                                padding: 0;   
-                                .dados{
-                                        padding: 0; 
-                                        h3{
-                                                color: $azul-escuro;
-                                                font-size: 25px;
-                                                font-weight: 600;
-                                        }
-                                        a{
-                                                font-size: 18px;
-                                                color: $cinza;
-                                        }
-                                        .endereco{
-                                                h3{
-                                                        margin-top: 0;
-                                                }
-                                        }
-                                        .rede-socias{
-                                                margin: 30px 0 20px 0;
-                                                display: flex;
-                                                justify-content: flex-start;
-                                                align-items: center;
-                                                .instagram{
-                                                        margin-left: 10px;
-                                                }
-                                        }
-                                }
-                                .formulario{
-                                        input {
-                                                outline: none;
-                                                border: none;
-                                        }
-                                        textarea {
-                                                outline: none;
-                                                border: none;
-                                                resize: none;
-                                        }
-                                        textarea:focus, input:focus {
-                                                border-color: transparent !important;
-                                        }
-                                        .campos {
-                                                position: relative;                     
-                                                margin-bottom: 15px;
-                                        }
-                                        .input2 {
-                                                display: block;
-                                                padding-left: 10px;
-                                                width: 100%;
-                                                font-size: 15px;
-                                                color: #8a8989;
-                                                line-height: 1.2;
-                                                font-weight: normal;
-                                        }
-                                        .focus-input2 {
-                                                position: absolute;
-                                                display: block;
-                                                width: 100%;
-                                                height: 100%;
-                                                top: 0;
-                                                left: 0;
-                                                pointer-events: none;
-                                        }
-                                        .focus-input2::before {
-                                                content: "";
-                                                display: block;
-                                                position: absolute;
-                                                bottom: 0px;
-                                                left: 0;
-                                                width: 100%;
-                                                border: 1px solid #8a8989;
-                                                // background-color: #eaeaea;
-                                                border-radius: 0px;
-                                                height: 45px;
-                                                -webkit-transition: all 0.4s;
-                                                -o-transition: all 0.4s;
-                                                -moz-transition: all 0.4s;
-                                                transition: all 0.4s;
-                                        }
-                                        .focus-input2::after {
-                                                content: attr(data-placeholder);
-                                                display: block;
-                                                width: 100%;
-                                                position: absolute;
-                                                top: 0px;
-                                                left: 10px;
-                                                font-size: 18px;
-                                                color: $azul-escuro;
-                                                line-height: 1.2;
-                                                -webkit-transition: all 0.4s;
-                                                -o-transition: all 0.4s;
-                                                -moz-transition: all 0.4s;
-                                                transition: all 0.4s;
-                                        }
-                                        /*---------------------------------------------*/
-                                        input.input2 {
-                                                height: 55px;
-                                        }
-                                        input.input2 + .focus-input2::after {
-                                                top: 23px;
-                                                left: 10px;                     
-                                        }
-                                        textarea.input2 {
-                                                min-height: 129px;
-                                                padding-top: 13px;
-                                                padding-bottom: 13px;
-                                        }
-                                        textarea.input2 + .focus-input2::before {
-                                                height: 120px;                  
-                                        }
-                        
-                                        textarea.input2 + .focus-input2::after {
-                                                top: 12px;
-                                                left: 10;                       
-                                        }
-                                        .input2:focus + .focus-input2::after {
-                                                top: -11px;
-                                                font-size: 15px;
-                                        }
-                                        .input2:focus + .focus-input2::before {
-                                                width: 100%;
-                                                border: 1px solid $azul-escuro;
-                                        }
-                                        .has-val.input2 + .focus-input2::after {
-                                                top: -11px;
-                                                color: $azul-escuro;
-                                                font-size: 15px;
-                                        }
-                                        .has-val.input2 + .focus-input2::before {
-                                                width: 100%;
-                                                color: #f49b3a;
-                                                border: 1px solid $azul-escuro;
-                                        }
-                                        .campo1{
-                                                @extend .col-md-12, .col-sm-12, .col-xs-12;
-                                                padding: 0;
-                                                margin-right: 5px;
-                                                @media screen and (max-width: 480px) and (min-width: 220px) {
-                                                        margin-right: 0px;
-                                                }
-                                                @media screen and (max-width: 990px) and (min-width: 481px) {
-                                                        margin-right: 0px;
-                                                }
-                                        }
-                                        .campo2{
-                                                @extend .col-md-4, .col-sm-12, .col-xs-12;
-                                                padding: 0;
-                                                margin-bottom: 20px
-                                        }
-                                        .campo3{
-                                                @extend .col-md-3, .col-sm-12, .col-xs-12;
-                                                width: 29.333333%;
-                                                margin: 0 2%;
-                                                padding: 0;
-                                                margin-bottom: 0px;
-                                                @media screen and (max-width: 990px) and (min-width: 220px) {
-                                                        width: 100%;
-                                                        margin-left: 0px;
-                                                        margin-bottom: 15px;
-                                                }
-                                        }
-                                        .load{
-                                                display: none;
-                                        }
-                                        .botao-enviar{
-                                                @extend .col-md-12, .col-sm-12, .col-xs-12;
-                                                padding: 0;
-                                                text-align: right;
-                                                button{
-                                                        color: #fff;
-                                                        background: $azul-escuro;           
-                                                        border:none;
-                                                        padding: 7px 30px;
-                                                        border-radius: 0;
-                                                        transition: all .3s;
-                                                        font-size: 18px;
-                                                        font-weight: 500;
-                                                        &:hover{                                        
-                                                                transition: all .3s;
-                                                                background: $azul-claro;                                                                   
-                                                        }
-                                                }
-                                        }
-                                }
-                        }
-                        @media only screen and (max-width: 1200px){
-                                flex-flow: column-reverse;
-                                align-items: center;
-                                .descritivo{
-                                        width: 100%;
-                                }
-                                .mapa{
-                                        width: 100%;
-                                        margin-top: 20px;
-                                        iframe{
-                                                width: 100%;
-                                        }
-                                }
-                        }
-                        @media only screen and (max-width: 770px){
-                                margin: 50px 0;
-                                .descritivo{
-                                        .dados{
-                                                h3{
-                                                        font-size: 22px;
-                                                }
-                                                a{
-                                                        font-size: 16px;
-                                                }
-                                        }
-                                }
-                        }
-                }
-        }
+					textarea.input2 + .focus-input2::after {
+						top: 12px;
+						left: 10;
+					}
+					.input2:focus + .focus-input2::after {
+						top: -11px;
+						font-size: 15px;
+					}
+					.input2:focus + .focus-input2::before {
+						width: 100%;
+						border: 1px solid $azul-escuro;
+					}
+					.has-val.input2 + .focus-input2::after {
+						top: -11px;
+						color: $azul-escuro;
+						font-size: 15px;
+					}
+					.has-val.input2 + .focus-input2::before {
+						width: 100%;
+						color: #f49b3a;
+						border: 1px solid $azul-escuro;
+					}
+					.campo1 {
+						@extend .col-md-12, .col-sm-12, .col-xs-12;
+						padding: 0;
+						margin-right: 5px;
+						@media screen and (max-width: 480px) and (min-width: 220px) {
+							margin-right: 0px;
+						}
+						@media screen and (max-width: 990px) and (min-width: 481px) {
+							margin-right: 0px;
+						}
+					}
+					.campo2 {
+						@extend .col-md-4, .col-sm-12, .col-xs-12;
+						padding: 0;
+						margin-bottom: 20px;
+					}
+					.campo3 {
+						@extend .col-md-3, .col-sm-12, .col-xs-12;
+						width: 29.333333%;
+						margin: 0 2%;
+						padding: 0;
+						margin-bottom: 0px;
+						@media screen and (max-width: 990px) and (min-width: 220px) {
+							width: 100%;
+							margin-left: 0px;
+							margin-bottom: 15px;
+						}
+					}
+					.load {
+						display: none;
+					}
+					.botao-enviar {
+						@extend .col-md-12, .col-sm-12, .col-xs-12;
+						padding: 0;
+						text-align: right;
+						button {
+							color: #fff;
+							background: $azul-escuro;
+							border: none;
+							padding: 7px 30px;
+							border-radius: 0;
+							transition: all 0.3s;
+							font-size: 18px;
+							font-weight: 500;
+							&:hover {
+								transition: all 0.3s;
+								background: $azul-claro;
+							}
+						}
+					}
+				}
+			}
+			@media only screen and (max-width: 1200px) {
+				flex-flow: column-reverse;
+				align-items: center;
+				.descritivo {
+					width: 100%;
+				}
+				.mapa {
+					width: 100%;
+					margin-top: 20px;
+					iframe {
+						width: 100%;
+					}
+				}
+			}
+			@media only screen and (max-width: 770px) {
+				margin: 50px 0;
+				.descritivo {
+					.dados {
+						h3 {
+							font-size: 22px;
+						}
+						a {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
 }

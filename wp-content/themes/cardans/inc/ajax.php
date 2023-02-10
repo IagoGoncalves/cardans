@@ -40,7 +40,7 @@ function my_action_enviar_email() {
 		$mailer->FromName = 'Pagina de contato'; //Nome que será exibido para o destinatário
 		$mailer->From = $deEmail; //Obrigatório ser a mesma caixa postal indicada em "username"
 		$mailer->AddReplyTo($deEmail, $deNome);
-		$mailer->AddAddress('iago@ideapublicidade.com.br'); //Destinatários contato@Cardans.com.br'
+		$mailer->AddAddress('cardans.extrema@hotmail.com'); //Destinatários contato@Cardans.com.br'
 
 		//Conversor UTF-8 para acentuação
 		$mailer->Subject = $assunto = '=?UTF-8?B?'.base64_encode($assunto).'?=';		
