@@ -29,7 +29,7 @@ body {
 	}
 }
 // Paleta de cor
-$azul-escuro: #0054a6;
+$vinho: #0054a6;
 $azul-intermediario: #0060bd;
 $azul-claro: #0174e4;
 $cinza: #6a6a6a;
@@ -41,7 +41,7 @@ $cinza: #6a6a6a;
 }
 h2 {
 	font-size: 70px;
-	color: $azul-escuro;
+	color: $vinho;
 	font-weight: 400;
 	text-align: center;
 	@media only screen and (max-width: 990px) {
@@ -94,14 +94,14 @@ header {
 				right: 0;
 				transform: translate(0%, -100%);
 				button {
-					background-color: $azul-escuro;
+					background-color: $vinho;
 					border: 1px solid #01244e;
 					outline: -webkit-focus-ring-color auto 0px;
 					@media screen and (max-width: 770px) and (min-width: 220px) {
 						display: block;
 					}
 					&:hover {
-						background-color: $azul-escuro;
+						background-color: $vinho;
 					}
 				}
 				.icon-bar {
@@ -172,7 +172,7 @@ header {
 					&.active a {
 						padding: 40px 0;
 						background-color: transparent;
-						color: $azul-escuro;
+						color: $vinho;
 						position: relative;
 						font-weight: 600;
 						border-bottom: 5px solid $azul-claro;
@@ -189,7 +189,7 @@ header {
 						&:focus {
 							outline: 0px auto -webkit-focus-ring-color;
 							outline-offset: 0px;
-							color: $azul-escuro;
+							color: $vinho;
 							background-color: transparent;
 						}
 					}
@@ -203,7 +203,7 @@ header {
 				}
 			}
 			.whatsapp {
-				background-color: $azul-escuro;
+				background-color: $vinho;
 				color: #fff;
 				font-size: 20px;
 				text-decoration: none;
@@ -353,7 +353,7 @@ header {
 }
 footer {
 	@extend .col-md-12;
-	background: $azul-escuro;
+	background: $vinho;
 	padding: 0;
 	article {
 		display: flex;
@@ -434,7 +434,7 @@ footer {
 	.copyright {
 		@extend .col-md-12;
 		padding: 0;
-		background: $azul-escuro;
+		background: $vinho;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -513,7 +513,7 @@ footer {
 		.swiper-container {
 			width: 100%;
 			height: 100%;
-			background: $azul-escuro;
+			background: $vinho;
 			position: relative;
 			.swiper-wrapper {
 				.swiper-slide {
@@ -662,9 +662,9 @@ footer {
 					}
 				}
 				.swiper-pagination-bullet-active {
-					color: $azul-escuro;
-					background: $azul-escuro;
-					border-bottom: 2px solid $azul-escuro;
+					color: $vinho;
+					background: $vinho;
+					border-bottom: 2px solid $vinho;
 				}
 				@media only screen and (max-width: 990px) {
 					display: none;
@@ -689,7 +689,7 @@ footer {
 			z-index: 1;
 			article {
 				flex-direction: column;
-				background-color: $azul-escuro;
+				background-color: $vinho;
 				width: 100%;
 				width: 450px;
 				height: 190px;
@@ -853,7 +853,7 @@ footer {
 				h3 {
 					margin: 0 0 60px 0;
 					color: #fff;
-					background-color: $azul-escuro;
+					background-color: $vinho;
 					font-size: 25px;
 					padding: 10px 10px;
 					width: fit-content;
@@ -891,7 +891,7 @@ footer {
 				h3 {
 					font-size: 28px;
 					font-weight: 600;
-					color: $azul-escuro;
+					color: $vinho;
 					margin-bottom: 20px;
 				}
 				p {
@@ -1123,7 +1123,7 @@ footer {
 				.dados {
 					padding: 0;
 					h3 {
-						color: $azul-escuro;
+						color: $vinho;
 						font-size: 25px;
 						font-weight: 600;
 					}
@@ -1206,7 +1206,7 @@ footer {
 						top: 0px;
 						left: 10px;
 						font-size: 18px;
-						color: $azul-escuro;
+						color: $vinho;
 						line-height: 1.2;
 						-webkit-transition: all 0.4s;
 						-o-transition: all 0.4s;
@@ -1240,17 +1240,17 @@ footer {
 					}
 					.input2:focus + .focus-input2::before {
 						width: 100%;
-						border: 1px solid $azul-escuro;
+						border: 1px solid $vinho;
 					}
 					.has-val.input2 + .focus-input2::after {
 						top: -11px;
-						color: $azul-escuro;
+						color: $vinho;
 						font-size: 15px;
 					}
 					.has-val.input2 + .focus-input2::before {
 						width: 100%;
 						color: #f49b3a;
-						border: 1px solid $azul-escuro;
+						border: 1px solid $vinho;
 					}
 					.campo1 {
 						@extend .col-md-12, .col-sm-12, .col-xs-12;
@@ -1289,7 +1289,7 @@ footer {
 						text-align: right;
 						button {
 							color: #fff;
-							background: $azul-escuro;
+							background: $vinho;
 							border: none;
 							padding: 7px 30px;
 							border-radius: 0;

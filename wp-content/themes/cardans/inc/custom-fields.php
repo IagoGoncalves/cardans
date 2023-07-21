@@ -121,7 +121,17 @@ function custom_metabox() {
       ),
       array(
          'id'          => 'telefone', // Obrigatório
-         'label'       => __( 'Telefone:', 'odin' ), // Obrigatório
+         'label'       => __( 'Telefone 1:', 'odin' ), // Obrigatório
+         'type'        => 'text', // Obrigatório
+         'default'     => '', // Opcional (deve ser o id de uma imagem em mídias, separe os ids com virtula)
+         'description' => __( 'Digite o numero com DDD ex.:(xx) xxxx-xxxx', 'odin' ),
+         'attributes'  => array( // Optional (html input elements)
+            'type' => 'tel'
+         )
+      ),
+      array(
+         'id'          => 'telefone2', // Obrigatório
+         'label'       => __( 'Telefone 2:', 'odin' ), // Obrigatório
          'type'        => 'text', // Obrigatório
          'default'     => '', // Opcional (deve ser o id de uma imagem em mídias, separe os ids com virtula)
          'description' => __( 'Digite o numero com DDD ex.:(xx) xxxx-xxxx', 'odin' ),
@@ -148,6 +158,20 @@ function custom_metabox() {
             'attributes'  => array( // Optional (html input elements)
                'type' => 'email'
             )
+      ),
+      array(
+         'id'   => 'separator1', // Obrigatório
+         'type' => 'separator' // Obrigatório
+      ),
+      array(
+         'id'          => 'horario-semana', // Obrigatório
+         'label'       => __( 'Horario segunda a sexta:', 'odin' ), // Obrigatório
+         'type'        => 'text', // Obrigatório       
+      ),
+      array(
+         'id'          => 'horario-fds', // Obrigatório
+         'label'       => __( 'Horario sabado:', 'odin' ), // Obrigatório
+         'type'        => 'text', // Obrigatório       
       ),
       array(
          'id'   => 'separator1', // Obrigatório

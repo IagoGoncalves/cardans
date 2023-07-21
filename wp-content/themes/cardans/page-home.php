@@ -22,8 +22,8 @@ get_header();
 								</div>
 							</div>
 							<div class="descricoes">
-								<h2 data-swiper-parallax="2300">Concerto de <br><b>caminhões</b></h2>
-								<h4>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de</h4>
+								<h2 data-swiper-parallax="2300">Conserto de <br><b>caminhões</b></h2>
+								<h4 data-swiper-parallax="2000">Nossa oficina mecânica de conserto de caminhões possui especialização em manutenção e fabricação de cardans, proporcionando soluções eficientes para problemas mecânicos em caminhões.</h4>
 							</div>		
 						</div>	
 					</div>	
@@ -35,8 +35,8 @@ get_header();
 								</div>
 							</div>
 							<div class="descricoes">
-								<h2 data-swiper-parallax="2300">Lorem ipsum<br><b>Desotich</b></h2>
-								<h4>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de</h4>
+								<h2 data-swiper-parallax="2300">Engraxe dos<br><b>cardans</b></h2>
+								<h4 data-swiper-parallax="2000">Aplicamos graxa especializada reduzindo o atrito e desgaste dos cardans. A manutenção preventiva ajuda prolongar a vida útil, evitando falhas e reduzindo o custo de reparos futuros.</h4>
 							</div>		
 						</div>	
 					</div>	
@@ -58,6 +58,8 @@ get_header();
 								$var->the_post(); ?>
 									<?php 
 										$telefone =  get_post_meta( $post->ID,'telefone', true );
+										$horarioseg =  get_post_meta( $post->ID,'horario-semana', true );
+										$horariosab =  get_post_meta( $post->ID,'horario-fds', true );
 										$logradouro =  get_post_meta( $post->ID,'logradouro', true );
 										$endereco =  get_post_meta( $post->ID,'endereco', true );
 										$numero =  get_post_meta( $post->ID,'numero', true );
@@ -68,13 +70,13 @@ get_header();
 									?>
 									<article class="align horario">
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock-banner-white.png"/>
-										<h3>Lorem Ipsum dolor sit</h3>
-										<h4>Segunda a sexta 8h00 - 17h00</h4>
-										<h4>Sábado 8h00 - 12h00</h4>
+										<h3>Horário de funcionamento</h3>
+										<h4><?php echo $horarioseg?></h4>
+										<h4><?php echo $horariosab?></h4>
 									</article>
 									<article class="align">
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/telephone-banner-white.png"/>
-										<h4>Lorem Ipsum dolor sit</h4>
+										<h3>Contato</h3>
 										<h3><?php echo $telefone?></h3>
 									</article>
 									<article class="align">
